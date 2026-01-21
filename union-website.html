@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNTSS | Sección Sindical - Renovando e Inovando</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #f5f3ee;
+            --cream-dark: #e8e4db;
+            --forest: #2d3b2d;
+            --forest-light: #3d4f3d;
+            --charcoal: #1a1a1a;
+            --olive: #4a5a4a;
+            --gold: #e8a849;
+            --orange: #f59e0b;
+            --orange-dark: #d97706;
+            --text-primary: #1a1a1a;
+            --text-secondary: #5a5a5a;
+            --text-muted: #8a8a8a;
+            --border-light: rgba(45, 59, 45, 0.15);
+            --border-medium: rgba(45, 59, 45, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            background: transparent;
+        }
+
+        .nav-link:hover {
+            background: rgba(45, 59, 45, 0.05);
+            border-color: var(--forest);
+        }
+
+        .nav-cta {
+            padding: 0.6rem 1.2rem;
+            background: var(--forest);
+            color: var(--cream);
+            border: 1px solid var(--forest);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            padding: 6rem 3rem 4rem;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--cream);
+            border: 1px dashed var(--border-medium);
+            padding: 4rem 2rem;
+            background-image: url('planilla.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(245, 243, 238, 0.75) 0%,
+                rgba(245, 243, 238, 0.70) 50%,
+                rgba(245, 243, 238, 0.65) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-color: var(--border-medium);
+            border-style: solid;
+        }
+
+        .corner-tl { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
+        .corner-tr { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
+        .corner-bl { bottom: 8px; left: 8px; border-width: 0 0 1px 1px; }
+        .corner-br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
+
+        .hero-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: 280px;
+            height: auto;
+            margin: 0 auto 2rem auto;
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange-dark);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--orange-dark);
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: var(--forest);
+            color: var(--cream);
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--forest-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px dashed var(--border-medium);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--forest);
+            background: rgba(45, 59, 45, 0.03);
+        }
+
+        .btn-secondary span {
+            font-size: 0.7rem;
+            opacity: 0.5;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(45, 59, 45, 0.08);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--cream);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--forest);
+            background: rgba(45, 59, 45, 0.02);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-light);
+        }
+
+        .card-footer-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border-light);
+        }
+
+        .card-footer-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Proposals Section */
+        .proposals-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .proposals-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .proposal-item {
+            background: var(--cream);
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--orange);
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .proposal-item:hover {
+            border-left-width: 6px;
+            border-left-color: var(--orange-dark);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.1);
+            transform: translateX(8px);
+        }
+
+        .proposal-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 50%;
+            font-weight: 700;
+            color: var(--orange-dark);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .proposal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .proposal-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--cream-dark);
+            padding: 6rem 3rem;
+        }
+
+        .team-photo-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            max-height: 500px;
+        }
+
+        .team-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .team-hotspot {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .team-hotspot:hover {
+            background: rgba(245, 158, 11, 0.15);
+        }
+
+        .team-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.95) 0%, rgba(26, 26, 26, 0.8) 70%, transparent 100%);
+            padding: 2.5rem 1rem 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .team-hotspot:hover .team-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-info-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .team-info-role {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 0.2rem;
+        }
+
+        .team-info-position {
+            font-size: 0.75rem;
+            color: rgba(245, 243, 238, 0.7);
+        }
+
+        /* Documents Section */
+        .documents-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .document-card {
+            background: var(--cream);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .document-card:hover {
+            border-color: var(--forest);
+            background: rgba(45, 59, 45, 0.02);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .document-icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .document-emoji {
+            font-size: 1.75rem;
+        }
+
+        .document-info {
+            flex: 1;
+        }
+
+        .document-period {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--orange-dark);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .document-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .document-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--forest);
+            color: var(--cream);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            align-self: flex-start;
+            transition: all 0.2s ease;
+        }
+
+        .document-card:hover .download-btn {
+            background: var(--forest-light);
+        }
+
+        .download-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            background: var(--cream-dark);
+            padding: 6rem 3rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: var(--cream);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .resource-card:hover {
+            border-color: var(--orange-dark);
+            background: rgba(245, 158, 11, 0.03);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.15);
+        }
+
+        .resource-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover .resource-icon {
+            background: rgba(245, 158, 11, 0.2);
+            transform: scale(1.1);
+        }
+
+        .resource-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .resource-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--forest);
+            color: var(--cream);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover .resource-badge {
+            background: var(--forest-light);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .quote-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quote-visual {
+            position: relative;
+            border: 1px dashed var(--border-medium);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--orange);
+            opacity: 0.4;
+            line-height: 1;
+            display: block;
+            margin-bottom: -1rem;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .quote-mark-end {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--orange);
+            opacity: 0.4;
+            line-height: 1;
+            display: block;
+            margin-top: -0.5rem;
+        }
+
+        .quote-attribution {
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: normal;
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-image {
+            width: 80px;
+            height: auto;
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 1px;
+            background: rgba(245, 243, 238, 0.2);
+            margin: 1.5rem auto;
+        }
+
+        .footer-year {
+            font-size: 0.85rem;
+            color: rgba(245, 243, 238, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .hero-visual {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .hero-logo {
+                width: 140px;
+            }
+
+            .mission-section,
+            .documents-section,
+            .quote-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .cards-grid,
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-visual {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .nav-links {
+                gap: 0.3rem;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            footer {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <img src="logo_govis-2.png" alt="Logo Sindicato" class="logo-image">
+                <div class="logo-text">
+                    <span class="logo-title">SNTSS</span>
+                    <span class="logo-subtitle">Sección Sindical</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#mision" class="nav-link">Misión</a>
+                <a href="#documentos" class="nav-cta">Documentos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-visual">
+                <div class="corner-decoration corner-tl"></div>
+                <div class="corner-decoration corner-tr"></div>
+                <div class="corner-decoration corner-bl"></div>
+                <div class="corner-decoration corner-br"></div>
+                
+                <div class="hero-content">
+                    <img src="logo_govis-2.png" alt="Logo SNTSS Renovando e Inovando" class="hero-logo">
+                    
+                    <div class="hero-badge">
+                        <span>◆</span> Compromiso Sindical
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Renovando e <em>Inovando</em>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Compromiso fuerte, defensa justa
+                    </p>
+                    
+                    <p class="hero-description">
+                        Protegemos el bienestar común de los trabajadores con la convicción 
+                        y fortaleza de un equipo unido.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#documentos" class="btn-primary">Ver Documentos</a>
+                        <a href="#mision" class="btn-secondary">
+                            <span>+</span> Nuestra Misión <span>+</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section id="mision" class="mission-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Nuestros Principios
+                </div>
+                <h2 class="section-title">Misión y Visión</h2>
+                <p class="section-description">
+                    Los pilares que guían nuestra labor sindical
+                </p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Mission Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Misión</h3>
+                    <p class="card-text">
+                        Proteger el bienestar común de los trabajadores con la convicción y fortaleza 
+                        de un equipo unido, ejercer los derechos apegados y regidos por nuestro contrato 
+                        colectivo. Daremos nuestro apoyo brindando el tiempo y dando el seguimiento a 
+                        las demandas del trabajador. Fortalecer a todas las categorías de nuestra clínica, 
+                        acreditar que los derechos del trabajador sean respetados.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-footer-line"></span>
+                        <span class="card-footer-text">Defensa laboral</span>
+                        <span class="card-footer-line"></span>
+                    </div>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Visión</h3>
+                    <p class="card-text">
+                        Fomentar la unión con el esfuerzo y la participación de todos para un 
+                        bienestar común. Ser un sindicato incluyente que promueve la participación 
+                        de todos los trabajadores en la toma de decisiones y el respeto a sus derechos 
+                        laborales fundamentales.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-footer-line"></span>
+                        <span class="card-footer-text">Unidad sindical</span>
+                        <span class="card-footer-line"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposals Section -->
+    <section id="propuestas" class="proposals-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Nuestro Plan
+                </div>
+                <h2 class="section-title">Propuestas</h2>
+                <p class="section-description">
+                    Iniciativas y compromisos para mejorar las condiciones laborales
+                </p>
+            </div>
+
+            <div class="proposals-list">
+                <div class="proposal-item">
+                    <div class="proposal-number">1</div>
+                    <h3 class="proposal-title">Gestión eficiente de trámites laborales</h3>
+                    <p class="proposal-description">
+                        Nos comprometemos a dar seguimiento puntual y acompañamiento real en la entrega y resolución 
+                        de trámites de las y los trabajadores, evitando retrasos, desinformación o pérdida de documentos.
+                    </p>
+                </div>
+
+                <div class="proposal-item">
+                    <div class="proposal-number">2</div>
+                    <h3 class="proposal-title">Información actualizada y confiable</h3>
+                    <p class="proposal-description">
+                        Brindaremos información clara, verificada y actualizada sobre cualquier trámite relacionado con:
+                        Delegación, Sindicato, Cajas de ahorro y otros procesos administrativos. 
+                        <strong>Para que nadie tenga que "andar preguntando" o depender de terceros.</strong>
+                    </p>
+                </div>
+
+                <div class="proposal-item">
+                    <div class="proposal-number">3</div>
+                    <h3 class="proposal-title">Disponibilidad de formatos oficiales</h3>
+                    <p class="proposal-description">
+                        Contaremos siempre con los formatos oficiales necesarios para cualquier tipo de trámite 
+                        laboral o sindical, facilitando su acceso.
+                    </p>
+                </div>
+
+                <div class="proposal-item">
+                    <div class="proposal-number">4</div>
+                    <h3 class="proposal-title">Gestión de festejos por categorías</h3>
+                    <p class="proposal-description">
+                        Trabajaremos para que los festejos de las distintas categorías laborales se realicen de 
+                        forma organizada, justa y con inclusión, reconociendo el esfuerzo de cada grupo de trabajadores.
+                    </p>
+                </div>
+
+                <div class="proposal-item">
+                    <div class="proposal-number">5</div>
+                    <h3 class="proposal-title">Formación sindical para todos</h3>
+                    <p class="proposal-description">
+                        Brindaremos herramientas de formación y conocimiento sobre derechos laborales y sindicales 
+                        para empoderar a todos los trabajadores.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="integrantes" class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Nuestro Equipo
+                </div>
+                <h2 class="section-title">Integrantes</h2>
+                <p class="section-description">
+                    Comprometidos con la defensa de los derechos laborales
+                </p>
+            </div>
+
+            <div class="team-photo-container">
+                <img src="planilla.jpg" alt="Integrantes de la planilla">
+                
+                <div class="team-overlay">
+                    <!-- Columna 1 - Carlos -->
+                    <div class="team-hotspot">
+                        <div class="team-info">
+                            <h3 class="team-info-name">Carlos Ignacio Acevedo Gutierrez</h3>
+                            <p class="team-info-role">Secretaría General</p>
+                            <p class="team-info-position">AUO</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2 - Olimpia -->
+                    <div class="team-hotspot">
+                        <div class="team-info">
+                            <h3 class="team-info-name">Olimpia Giovanna Calderon Escobedo</h3>
+                            <p class="team-info-role">Secretaría del Interior</p>
+                            <p class="team-info-position">Auxiliar de laboratorio</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna 3 - Guadalupe -->
+                    <div class="team-hotspot">
+                        <div class="team-info">
+                            <h3 class="team-info-name">Dra. Maria Guadalupe Calderon Nunez</h3>
+                            <p class="team-info-role">Representante de Planilla</p>
+                            <p class="team-info-position">Med Familiar</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna 4 - Naim -->
+                    <div class="team-hotspot">
+                        <div class="team-info">
+                            <h3 class="team-info-name">Dr. Naim Garcia Ramirez</h3>
+                            <p class="team-info-role">Secretaría de Conflictos</p>
+                            <p class="team-info-position">Medico Familiar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documentos" class="documents-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Recursos
+                </div>
+                <h2 class="section-title">Documentos Oficiales</h2>
+                <p class="section-description">
+                    Descarga los documentos fundamentales de nuestra organización
+                </p>
+            </div>
+
+            <div class="documents-grid">
+                <!-- Contract Document -->
+                <a href="CONTRATO COLECTIVO DE TRABAJO 2025-2027.pdf" download class="document-card">
+                    <div class="document-icon-wrapper">
+                        <span class="document-emoji">📋</span>
+                    </div>
+                    <div class="document-info">
+                        <span class="document-period">2025-2027</span>
+                        <h3 class="document-title">Contrato Colectivo de Trabajo</h3>
+                        <p class="document-description">
+                            Documento oficial que rige las relaciones laborales entre el IMSS y sus trabajadores
+                        </p>
+                    </div>
+                    <div class="download-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="7,10 12,15 17,10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Descargar PDF</span>
+                    </div>
+                </a>
+
+                <!-- Estatutos Document -->
+                <a href="ESTATUTOS 2022 (1).pdf" download class="document-card">
+                    <div class="document-icon-wrapper">
+                        <span class="document-emoji">📜</span>
+                    </div>
+                    <div class="document-info">
+                        <span class="document-period">2022</span>
+                        <h3 class="document-title">Estatutos del SNTSS</h3>
+                        <p class="document-description">
+                            Normativa interna y reglamento del Sindicato Nacional de Trabajadores del Seguro Social
+                        </p>
+                    </div>
+                    <div class="download-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="7,10 12,15 17,10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Descargar PDF</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="recursos" class="resources-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Servicios
+                </div>
+                <h2 class="section-title">Recursos y Servicios</h2>
+                <p class="section-description">
+                    Herramientas y servicios disponibles para los trabajadores sindicalizados
+                </p>
+            </div>
+
+            <div class="resources-grid">
+                <!-- Calendarios -->
+                <a href="#calendarios" class="resource-card">
+                    <div class="resource-icon">📅</div>
+                    <h3 class="resource-title">Calendarios</h3>
+                    <p class="resource-description">
+                        Consulta los calendarios oficiales, días festivos y eventos importantes del sindicato
+                    </p>
+                    <span class="resource-badge">
+                        <span>Ver Calendarios</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Vacaciones -->
+                <a href="#vacaciones" class="resource-card">
+                    <div class="resource-icon">🏖️</div>
+                    <h3 class="resource-title">Vacaciones</h3>
+                    <p class="resource-description">
+                        Información sobre períodos vacacionales, derechos y procedimientos para solicitud
+                    </p>
+                    <span class="resource-badge">
+                        <span>Ver Información</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Caja de Ahorros -->
+                <a href="#caja-ahorros" class="resource-card">
+                    <div class="resource-icon">💰</div>
+                    <h3 class="resource-title">Caja de Ahorros</h3>
+                    <p class="resource-description">
+                        Consulta sobre préstamos, ahorros y beneficios de la caja de ahorros sindical
+                    </p>
+                    <span class="resource-badge">
+                        <span>Más Detalles</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Directorio -->
+                <a href="#directorio" class="resource-card">
+                    <div class="resource-icon">📇</div>
+                    <h3 class="resource-title">Directorio del Sindicato</h3>
+                    <p class="resource-description">
+                        Contactos de los representantes sindicales y oficinas de atención
+                    </p>
+                    <span class="resource-badge">
+                        <span>Ver Directorio</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-container">
+            <div class="quote-visual">
+                <div class="corner-decoration corner-tl"></div>
+                <div class="corner-decoration corner-tr"></div>
+                <div class="corner-decoration corner-bl"></div>
+                <div class="corner-decoration corner-br"></div>
+                
+                <blockquote>
+                    <span class="quote-mark">"</span>
+                    <p class="quote-text">
+                        Seguridad Social y Bienestar Económico de los Trabajadores
+                    </p>
+                    <span class="quote-mark-end">"</span>
+                </blockquote>
+                <cite class="quote-attribution">— Lema del SNTSS</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo_govis-2.png" alt="Logo SNTSS" class="footer-logo-image">
+            </div>
+            <p class="footer-text">
+                Sindicato Nacional de Trabajadores del Seguro Social
+            </p>
+            <div class="footer-divider"></div>
+            <p class="footer-year">© 2025 · Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

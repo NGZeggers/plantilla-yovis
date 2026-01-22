@@ -529,15 +529,26 @@
             object-fit: cover;
             object-position: center 30%;
             display: block;
-            transform: translateY(-280px);
+        }
+
+        @media (min-width: 769px) {
+            .team-photo-container img {
+                transform: translateY(-280px);
+            }
         }
 
         .team-members-list {
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
+        }
+
+        @media (min-width: 769px) {
+            .team-members-list {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .team-member-card {

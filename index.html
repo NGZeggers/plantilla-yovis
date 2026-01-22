@@ -1614,6 +1614,55 @@
             }
         });
 
+        // Manejar el botón "back" del navegador (especialmente para Android)
+        // Agregar entrada al historial cuando se abre un modal
+        function addHistoryEntry() {
+            history.pushState({ modalOpen: true }, '');
+        }
+
+        // Detectar cuando el usuario presiona el botón "back"
+        window.addEventListener('popstate', function(event) {
+            // Verificar si hay algún modal abierto
+            const openModal = document.querySelector('.modal.active');
+            if (openModal) {
+                // Cerrar el modal en lugar de salir de la página
+                closeModal();
+                // Prevenir que se vuelva a agregar al historial
+                event.preventDefault();
+            }
+        });
+
+        // Modificar las funciones de apertura para agregar entrada al historial
+        const originalOpenModal = openModal;
+        openModal = function(event) {
+            originalOpenModal(event);
+            addHistoryEntry();
+        };
+
+        const originalOpenVacacionesModal = openVacacionesModal;
+        openVacacionesModal = function(event) {
+            originalOpenVacacionesModal(event);
+            addHistoryEntry();
+        };
+
+        const originalOpenCajaModal = openCajaModal;
+        openCajaModal = function(event) {
+            originalOpenCajaModal(event);
+            addHistoryEntry();
+        };
+
+        const originalOpenDirectorioModal = openDirectorioModal;
+        openDirectorioModal = function(event) {
+            originalOpenDirectorioModal(event);
+            addHistoryEntry();
+        };
+
+        const originalOpenPrestamosModal = openPrestamosModal;
+        openPrestamosModal = function(event) {
+            originalOpenPrestamosModal(event);
+            addHistoryEntry();
+        };
+
         // Inicializar iconos de Lucide
         lucide.createIcons();
     </script>

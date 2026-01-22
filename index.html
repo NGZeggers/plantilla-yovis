@@ -306,9 +306,9 @@
 
         .btn-secondary {
             padding: 1rem 2rem;
-            background: transparent;
-            color: var(--charcoal);
-            border: 1px dashed var(--border-medium);
+            background: var(--orange-dark);
+            color: var(--cream);
+            border: 1px solid var(--orange-dark);
             border-radius: 8px;
             font-size: 0.9rem;
             font-weight: 500;
@@ -321,8 +321,9 @@
         }
 
         .btn-secondary:hover {
-            border-color: var(--forest);
-            background: rgba(45, 59, 45, 0.03);
+            background: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-2px);
         }
 
         .btn-secondary span {
@@ -1055,14 +1056,10 @@
             <a href="#" class="logo">
                 <img src="logo_govis-2.png" alt="Logo Sindicato" class="logo-image">
                 <div class="logo-text">
-                    <span class="logo-title">UMF #1 - Planilla A Blanca</span>
+                    <span class="logo-title">UMF #1 - Planilla Blanca</span>
                     <span class="logo-subtitle">Sección Sindical</span>
                 </div>
             </a>
-            <div class="nav-links">
-                <a href="#mision" class="nav-link">Misión</a>
-                <a href="#documentos" class="nav-cta">Documentos</a>
-            </div>
         </div>
     </nav>
 
@@ -1101,6 +1098,55 @@
                             <span>+</span> Nuestra Misión <span>+</span>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="integrantes" class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Nuestro Equipo
+                </div>
+                <h2 class="section-title">Integrantes</h2>
+                <p class="section-description">
+                    Comprometidos con la defensa de los derechos laborales
+                </p>
+            </div>
+
+            <div class="team-photo-container">
+                <img src="planilla.jpg" alt="Integrantes de la planilla">
+            </div>
+
+            <div class="team-members-list">
+                <!-- Member 1 - Carlos -->
+                <div class="team-member-card">
+                    <h3 class="team-member-name">Carlos Ignacio Acevedo Gutierrez</h3>
+                    <p class="team-member-role">Secretaría General</p>
+                    <p class="team-member-position">AUO</p>
+                </div>
+
+                <!-- Member 2 - Olimpia -->
+                <div class="team-member-card">
+                    <h3 class="team-member-name">Olimpia Giovanna Calderon Escobedo</h3>
+                    <p class="team-member-role">Secretaría del Interior</p>
+                    <p class="team-member-position">Auxiliar de laboratorio</p>
+                </div>
+
+                <!-- Member 3 - Guadalupe -->
+                <div class="team-member-card">
+                    <h3 class="team-member-name">Dra. Maria Guadalupe Calderon Nunez</h3>
+                    <p class="team-member-role">Representante de Planilla</p>
+                    <p class="team-member-position">Med Familiar</p>
+                </div>
+
+                <!-- Member 4 - Naim -->
+                <div class="team-member-card">
+                    <h3 class="team-member-name">Dr. Naim Garcia Ramirez</h3>
+                    <p class="team-member-role">Secretaría de Conflictos</p>
+                    <p class="team-member-position">Medico Familiar</p>
                 </div>
             </div>
         </div>
@@ -1225,55 +1271,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="integrantes" class="team-section">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <span>◇</span> Nuestro Equipo
-                </div>
-                <h2 class="section-title">Integrantes</h2>
-                <p class="section-description">
-                    Comprometidos con la defensa de los derechos laborales
-                </p>
-            </div>
-
-            <div class="team-photo-container">
-                <img src="planilla.jpg" alt="Integrantes de la planilla">
-            </div>
-
-            <div class="team-members-list">
-                <!-- Member 1 - Carlos -->
-                <div class="team-member-card">
-                    <h3 class="team-member-name">Carlos Ignacio Acevedo Gutierrez</h3>
-                    <p class="team-member-role">Secretaría General</p>
-                    <p class="team-member-position">AUO</p>
-                </div>
-
-                <!-- Member 2 - Olimpia -->
-                <div class="team-member-card">
-                    <h3 class="team-member-name">Olimpia Giovanna Calderon Escobedo</h3>
-                    <p class="team-member-role">Secretaría del Interior</p>
-                    <p class="team-member-position">Auxiliar de laboratorio</p>
-                </div>
-
-                <!-- Member 3 - Guadalupe -->
-                <div class="team-member-card">
-                    <h3 class="team-member-name">Dra. Maria Guadalupe Calderon Nunez</h3>
-                    <p class="team-member-role">Representante de Planilla</p>
-                    <p class="team-member-position">Med Familiar</p>
-                </div>
-
-                <!-- Member 4 - Naim -->
-                <div class="team-member-card">
-                    <h3 class="team-member-name">Dr. Naim Garcia Ramirez</h3>
-                    <p class="team-member-role">Secretaría de Conflictos</p>
-                    <p class="team-member-position">Medico Familiar</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Documents Section -->
     <section id="documentos" class="documents-section">
         <div class="section-container">
@@ -1381,7 +1378,7 @@
                 </a>
 
                 <!-- Directorio -->
-                <a href="#directorio" class="resource-card">
+                <a href="#" class="resource-card" onclick="openDirectorioModal(event)">
                     <div class="resource-icon">📇</div>
                     <h3 class="resource-title">Directorio del Sindicato</h3>
                     <p class="resource-description">
@@ -1408,11 +1405,11 @@
                 <blockquote>
                     <span class="quote-mark">"</span>
                     <p class="quote-text">
-                        Seguridad Social y Bienestar Económico de los Trabajadores
+                        Muchas gracias por su apoyo y confianza. Contamos con su voto para seguir trabajando por un mejor futuro para todos.
                     </p>
                     <span class="quote-mark-end">"</span>
                 </blockquote>
-                <cite class="quote-attribution">— Lema del SNTSS</cite>
+                <cite class="quote-attribution">— Planilla Blanca</cite>
             </div>
         </div>
     </section>
@@ -1424,10 +1421,10 @@
                 <img src="logo_govis-2.png" alt="Logo SNTSS" class="footer-logo-image">
             </div>
             <p class="footer-text">
-                Sindicato Nacional de Trabajadores del Seguro Social
+                Vota por Planilla Blanca
             </p>
             <div class="footer-divider"></div>
-            <p class="footer-year">© 2025 · Todos los derechos reservados</p>
+            <p class="footer-year">© Unidad de Medicina Familiar #1 - Planilla Blanca</p>
         </div>
     </footer>
     
@@ -1487,6 +1484,25 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal para Directorio del Sindicato -->
+    <div id="directorioModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Directorio Comité Sección III Jalisco TEL: 33 2886 6389</h3>
+                <button class="modal-close" onclick="closeModal('directorioModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="votaplaniallaA_comite.jpeg" alt="Directorio Comité Seccional" class="modal-image">
+            <div class="modal-actions">
+                <a href="votaplaniallaA_comite.jpeg" download="Directorio_Comite_Seccional_2025-2031.jpeg" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i>
+                    <span>Descargar Directorio</span>
+                </a>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Funciones para el modal de Nomina
@@ -1511,6 +1527,15 @@
         function openCajaModal(event) {
             event.preventDefault();
             document.getElementById('cajaModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reinicializar iconos después de abrir el modal
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+
+        // Funciones para el modal de Directorio
+        function openDirectorioModal(event) {
+            event.preventDefault();
+            document.getElementById('directorioModal').classList.add('active');
             document.body.style.overflow = 'hidden';
             // Reinicializar iconos después de abrir el modal
             setTimeout(() => lucide.createIcons(), 100);

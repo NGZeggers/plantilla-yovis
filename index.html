@@ -1365,9 +1365,26 @@
                 </a>
 
                 <!-- Caja de Ahorros -->
+                <a href="#" class="resource-card" onclick="openPrestamosModal(event)">
+                    <div class="resource-icon">
+                        <img src="icono_caja.png" alt="Caja de Ahorros" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <h3 class="resource-title">Caja de Ahorros (Préstamos)</h3>
+                    <p class="resource-description">
+                        Calendario para la gestion de préstamos excepcionales.
+                    </p>
+                    <span class="resource-badge">
+                        <span>Más Detalles</span>
+                        <i data-lucide="chevron-right"></i>
+                    </span>
+                </a>
+
+                <!-- Caja de Ahorros -->
                 <a href="#" class="resource-card" onclick="openCajaModal(event)">
-                    <div class="resource-icon">💰</div>
-                    <h3 class="resource-title">Caja de Ahorros</h3>
+                    <div class="resource-icon">
+                        <img src="icono_caja.png" alt="Caja de Ahorros" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <h3 class="resource-title">Caja de Ahorros (Requisitos)</h3>
                     <p class="resource-description">
                         Consulta sobre préstamos, ahorros y beneficios de la caja de ahorros sindical
                     </p>
@@ -1379,7 +1396,9 @@
 
                 <!-- Directorio -->
                 <a href="#" class="resource-card" onclick="openDirectorioModal(event)">
-                    <div class="resource-icon">📇</div>
+                    <div class="resource-icon">
+                        <img src="sntss-logo.png" alt="SNTSS" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
                     <h3 class="resource-title">Directorio del Sindicato</h3>
                     <p class="resource-description">
                         Contactos de los representantes sindicales y oficinas de atención
@@ -1503,6 +1522,25 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal para Préstamos Excepcionales -->
+    <div id="prestamosModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Calendario de Préstamos Excepcionales 2025</h3>
+                <button class="modal-close" onclick="closeModal('prestamosModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="votaplanillaA_prestamos.jpeg" alt="Calendario de Préstamos" class="modal-image">
+            <div class="modal-actions">
+                <a href="votaplanillaA_prestamos.jpeg" download="Calendario_Prestamos_Excepcionales_2025.jpeg" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i>
+                    <span>Descargar Calendario</span>
+                </a>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Funciones para el modal de Nomina
@@ -1536,6 +1574,15 @@
         function openDirectorioModal(event) {
             event.preventDefault();
             document.getElementById('directorioModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reinicializar iconos después de abrir el modal
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+
+        // Funciones para el modal de Préstamos
+        function openPrestamosModal(event) {
+            event.preventDefault();
+            document.getElementById('prestamosModal').classList.add('active');
             document.body.style.overflow = 'hidden';
             // Reinicializar iconos después de abrir el modal
             setTimeout(() => lucide.createIcons(), 100);

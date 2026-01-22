@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --cream: #f5f3ee;
@@ -690,6 +691,125 @@
             height: 16px;
         }
 
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            background: rgba(45, 59, 45, 0.1);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: var(--charcoal);
+        }
+
+        .modal-close:hover {
+            background: var(--forest);
+            color: var(--cream);
+            transform: rotate(90deg);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .modal-btn-download {
+            background: var(--forest);
+            color: var(--cream);
+        }
+
+        .modal-btn-download:hover {
+            background: var(--forest-light);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Resources Section */
         .resources-section {
             background: var(--cream-dark);
@@ -935,7 +1055,7 @@
             <a href="#" class="logo">
                 <img src="logo_govis-2.png" alt="Logo Sindicato" class="logo-image">
                 <div class="logo-text">
-                    <span class="logo-title">UMF #1</span>
+                    <span class="logo-title">UMF #1 - Planilla A Blanca</span>
                     <span class="logo-subtitle">Sección Sindical</span>
                 </div>
             </a>
@@ -1003,9 +1123,7 @@
                 <!-- Mission Card -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="shield-check"></i>
                     </div>
                     <h3 class="card-title">Misión</h3>
                     <p class="card-text">
@@ -1025,11 +1143,7 @@
                 <!-- Vision Card -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="6" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="eye"></i>
                     </div>
                     <h3 class="card-title">Visión</h3>
                     <p class="card-text">
@@ -1187,11 +1301,7 @@
                         </p>
                     </div>
                     <div class="download-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="7,10 12,15 17,10" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="download"></i>
                         <span>Descargar PDF</span>
                     </div>
                 </a>
@@ -1209,11 +1319,7 @@
                         </p>
                     </div>
                     <div class="download-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="7,10 12,15 17,10" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="download"></i>
                         <span>Descargar PDF</span>
                     </div>
                 </a>
@@ -1236,22 +1342,20 @@
 
             <div class="resources-grid">
                 <!-- Calendarios -->
-                <a href="#calendarios" class="resource-card">
+                <a href="#" class="resource-card" onclick="openModal(event)">
                     <div class="resource-icon">📅</div>
-                    <h3 class="resource-title">Calendarios</h3>
+                    <h3 class="resource-title">Nomina</h3>
                     <p class="resource-description">
-                        Consulta los calendarios oficiales, días festivos y eventos importantes del sindicato
+                        Consulta los calendarios oficiales, días festivos y pagos de nomina.
                     </p>
                     <span class="resource-badge">
                         <span>Ver Calendarios</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="chevron-right"></i>
                     </span>
                 </a>
 
                 <!-- Vacaciones -->
-                <a href="#vacaciones" class="resource-card">
+                <a href="#" class="resource-card" onclick="openVacacionesModal(event)">
                     <div class="resource-icon">🏖️</div>
                     <h3 class="resource-title">Vacaciones</h3>
                     <p class="resource-description">
@@ -1259,14 +1363,12 @@
                     </p>
                     <span class="resource-badge">
                         <span>Ver Información</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="chevron-right"></i>
                     </span>
                 </a>
 
                 <!-- Caja de Ahorros -->
-                <a href="#caja-ahorros" class="resource-card">
+                <a href="#" class="resource-card" onclick="openCajaModal(event)">
                     <div class="resource-icon">💰</div>
                     <h3 class="resource-title">Caja de Ahorros</h3>
                     <p class="resource-description">
@@ -1274,9 +1376,7 @@
                     </p>
                     <span class="resource-badge">
                         <span>Más Detalles</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="chevron-right"></i>
                     </span>
                 </a>
 
@@ -1289,9 +1389,7 @@
                     </p>
                     <span class="resource-badge">
                         <span>Ver Directorio</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,18 15,12 9,6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <i data-lucide="chevron-right"></i>
                     </span>
                 </a>
             </div>
@@ -1332,5 +1430,120 @@
             <p class="footer-year">© 2025 · Todos los derechos reservados</p>
         </div>
     </footer>
+    
+    <!-- Modal para Calendario de Nomina -->
+    <div id="nominaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Calendario de Pagos 2026</h3>
+                <button class="modal-close" onclick="closeModal('nominaModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="votaplantillaA_nomina.png" alt="Calendario de Pagos 2026" class="modal-image">
+            <div class="modal-actions">
+                <a href="votaplantillaA_nomina.png" download="Calendario_Nomina_2026.png" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i>
+                    <span>Descargar Calendario</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Roles Vacacionales -->
+    <div id="vacacionesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Tabla de Roles Vacacionales 2026</h3>
+                <button class="modal-close" onclick="closeModal('vacacionesModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="votaplanillaA_rolvac.jpeg" alt="Roles Vacacionales 2026" class="modal-image">
+            <div class="modal-actions">
+                <a href="votaplanillaA_rolvac.jpeg" download="Roles_Vacacionales_2026.jpeg" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i>
+                    <span>Descargar Tabla</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Caja de Ahorros -->
+    <div id="cajaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Caja de Previsión y Ahorros del SNTSS</h3>
+                <button class="modal-close" onclick="closeModal('cajaModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="votaplanillaA_caja.png" alt="Información Caja de Ahorros" class="modal-image">
+            <div class="modal-actions">
+                <a href="votaplanillaA_caja.png" download="Caja_Ahorros_SNTSS.png" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i>
+                    <span>Descargar Información</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Funciones para el modal de Nomina
+        function openModal(event) {
+            event.preventDefault();
+            document.getElementById('nominaModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reinicializar iconos después de abrir el modal
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+
+        // Funciones para el modal de Vacaciones
+        function openVacacionesModal(event) {
+            event.preventDefault();
+            document.getElementById('vacacionesModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reinicializar iconos después de abrir el modal
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+
+        // Funciones para el modal de Caja de Ahorros
+        function openCajaModal(event) {
+            event.preventDefault();
+            document.getElementById('cajaModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reinicializar iconos después de abrir el modal
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+
+        function closeModal(modalId) {
+            if (modalId) {
+                document.getElementById(modalId).classList.remove('active');
+            } else {
+                // Cerrar cualquier modal abierto
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+            }
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        }
+
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+    </script>
 </body>
 </html>

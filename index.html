@@ -8,1053 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --cream: #f5f3ee;
-            --cream-dark: #e8e4db;
-            --forest: #2d3b2d;
-            --forest-light: #3d4f3d;
-            --charcoal: #1a1a1a;
-            --olive: #4a5a4a;
-            --gold: #e8a849;
-            --orange: #f59e0b;
-            --orange-dark: #d97706;
-            --text-primary: #1a1a1a;
-            --text-secondary: #5a5a5a;
-            --text-muted: #8a8a8a;
-            --border-light: rgba(45, 59, 45, 0.15);
-            --border-medium: rgba(45, 59, 45, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1.5rem 3rem;
-            background: var(--cream);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-        }
-
-        .logo-image {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 1.35rem;
-            color: var(--charcoal);
-            letter-spacing: -0.02em;
-        }
-
-        .logo-subtitle {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-link {
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--border-medium);
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all 0.2s ease;
-            background: transparent;
-        }
-
-        .nav-link:hover {
-            background: rgba(45, 59, 45, 0.05);
-            border-color: var(--forest);
-        }
-
-        .nav-cta {
-            padding: 0.6rem 1.2rem;
-            background: var(--forest);
-            color: var(--cream);
-            border: 1px solid var(--forest);
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--forest-light);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: var(--cream);
-            display: flex;
-            align-items: center;
-            padding: 6rem 3rem 4rem;
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-visual {
-            position: relative;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            background: var(--cream);
-            border: 1px dashed var(--border-medium);
-            padding: 4rem 2rem;
-            background-image: url('planilla.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(245, 243, 238, 0.75) 0%,
-                rgba(245, 243, 238, 0.70) 50%,
-                rgba(245, 243, 238, 0.65) 100%
-            );
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .corner-decoration {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border-color: var(--border-medium);
-            border-style: solid;
-        }
-
-        .corner-tl { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
-        .corner-tr { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
-        .corner-bl { bottom: 8px; left: 8px; border-width: 0 0 1px 1px; }
-        .corner-br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
-
-        .hero-content {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-logo {
-            width: 280px;
-            height: auto;
-            margin: 0 auto 2rem auto;
-            display: block;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--orange-dark);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.1s forwards;
-        }
-
-        .hero-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 500;
-            line-height: 1.1;
-            color: var(--charcoal);
-            margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.2s forwards;
-        }
-
-        .hero-title em {
-            font-style: italic;
-            color: var(--orange-dark);
-        }
-
-        .hero-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--forest);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.3s forwards;
-        }
-
-        .hero-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.4s forwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.5s forwards;
-        }
-
-        .btn-primary {
-            padding: 1rem 2rem;
-            background: var(--forest);
-            color: var(--cream);
-            border: none;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--forest-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            padding: 1rem 2rem;
-            background: var(--orange-dark);
-            color: var(--cream);
-            border: 1px solid var(--orange-dark);
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-secondary:hover {
-            background: var(--orange);
-            border-color: var(--orange);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary span {
-            font-size: 0.7rem;
-            opacity: 0.5;
-        }
-
-        /* Mission Section */
-        .mission-section {
-            background: var(--cream);
-            padding: 6rem 3rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .section-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            background: rgba(45, 59, 45, 0.08);
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--forest);
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 500;
-            color: var(--charcoal);
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--cream);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            border-color: var(--forest);
-            background: rgba(45, 59, 45, 0.02);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--orange-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .card-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .card-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 1rem;
-        }
-
-        .card-text {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-footer {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding-top: 1.5rem;
-            border-top: 1px dashed var(--border-light);
-        }
-
-        .card-footer-line {
-            flex: 1;
-            height: 1px;
-            background: var(--border-light);
-        }
-
-        .card-footer-text {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* Proposals Section */
-        .proposals-section {
-            background: var(--cream);
-            padding: 6rem 3rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .proposals-list {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .proposal-item {
-            background: var(--cream);
-            border: 1px solid var(--border-light);
-            border-left: 4px solid var(--orange);
-            border-radius: 12px;
-            padding: 2rem 2.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .proposal-item:hover {
-            border-left-width: 6px;
-            border-left-color: var(--orange-dark);
-            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.1);
-            transform: translateX(8px);
-        }
-
-        .proposal-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 50%;
-            font-weight: 700;
-            color: var(--orange-dark);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .proposal-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 0.75rem;
-        }
-
-        .proposal-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        /* Team Section */
-        .team-section {
-            background: var(--cream-dark);
-            padding: 6rem 3rem;
-        }
-
-        .team-photo-container {
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            max-height: 600px;
-        }
-
-        .team-photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-            display: block;
-        }
-
-        @media (min-width: 769px) {
-            .team-photo-container img {
-                transform: translateY(-280px);
-            }
-        }
-
-        .team-members-list {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        @media (min-width: 769px) {
-            .team-members-list {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .team-member-card {
-            background: var(--cream);
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 200px;
-        }
-
-        .team-member-card:hover {
-            border-color: var(--orange);
-            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .team-member-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .team-member-role {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--orange-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .team-member-position {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Documents Section */
-        .documents-section {
-            background: var(--cream);
-            padding: 6rem 3rem;
-        }
-
-        .documents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .document-card {
-            background: var(--cream);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2rem;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .document-card:hover {
-            border-color: var(--forest);
-            background: rgba(45, 59, 45, 0.02);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .document-icon-wrapper {
-            width: 56px;
-            height: 56px;
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .document-emoji {
-            font-size: 1.75rem;
-        }
-
-        .document-info {
-            flex: 1;
-        }
-
-        .document-period {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--orange-dark);
-            background: rgba(245, 158, 11, 0.1);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
-        }
-
-        .document-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
-        }
-
-        .document-description {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--forest);
-            color: var(--cream);
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            align-self: flex-start;
-            transition: all 0.2s ease;
-        }
-
-        .document-card:hover .download-btn {
-            background: var(--forest-light);
-        }
-
-        .download-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            background: var(--cream);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            animation: slideUp 0.3s ease;
-        }
-
-        .modal-image {
-            width: 100%;
-            height: auto;
-            max-height: 70vh;
-            object-fit: contain;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--charcoal);
-        }
-
-        .modal-close {
-            width: 40px;
-            height: 40px;
-            background: rgba(45, 59, 45, 0.1);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            color: var(--charcoal);
-        }
-
-        .modal-close:hover {
-            background: var(--forest);
-            color: var(--cream);
-            transform: rotate(90deg);
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .modal-btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .modal-btn-download {
-            background: var(--forest);
-            color: var(--cream);
-        }
-
-        .modal-btn-download:hover {
-            background: var(--forest-light);
-            transform: translateY(-2px);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Resources Section */
-        .resources-section {
-            background: var(--cream-dark);
-            padding: 6rem 3rem;
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .resource-card {
-            background: var(--cream);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .resource-card:hover {
-            border-color: var(--orange-dark);
-            background: rgba(245, 158, 11, 0.03);
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.15);
-        }
-
-        .resource-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .resource-card:hover .resource-icon {
-            background: rgba(245, 158, 11, 0.2);
-            transform: scale(1.1);
-        }
-
-        .resource-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 0.75rem;
-        }
-
-        .resource-description {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .resource-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--forest);
-            color: var(--cream);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .resource-card:hover .resource-badge {
-            background: var(--forest-light);
-        }
-
-        /* Quote Section */
-        .quote-section {
-            background: var(--cream);
-            padding: 6rem 3rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .quote-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .quote-visual {
-            position: relative;
-            border: 1px dashed var(--border-medium);
-            border-radius: 20px;
-            padding: 4rem 3rem;
-            text-align: center;
-        }
-
-        .quote-mark {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            color: var(--orange);
-            opacity: 0.4;
-            line-height: 1;
-            display: block;
-            margin-bottom: -1rem;
-        }
-
-        .quote-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-style: italic;
-            color: var(--charcoal);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .quote-mark-end {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            color: var(--orange);
-            opacity: 0.4;
-            line-height: 1;
-            display: block;
-            margin-top: -0.5rem;
-        }
-
-        .quote-attribution {
-            display: block;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-style: normal;
-            letter-spacing: 0.05em;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--charcoal);
-            padding: 4rem 3rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-logo-image {
-            width: 80px;
-            height: auto;
-            opacity: 0.9;
-        }
-
-        .footer-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            color: var(--cream);
-            margin-bottom: 1rem;
-        }
-
-        .footer-divider {
-            width: 60px;
-            height: 1px;
-            background: rgba(245, 243, 238, 0.2);
-            margin: 1.5rem auto;
-        }
-
-        .footer-year {
-            font-size: 0.85rem;
-            color: rgba(245, 243, 238, 0.5);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .hero {
-                padding: 5rem 1.5rem 3rem;
-            }
-
-            .hero-visual {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .hero-logo {
-                width: 140px;
-            }
-
-            .mission-section,
-            .documents-section,
-            .quote-section {
-                padding: 4rem 1.5rem;
-            }
-
-            .cards-grid,
-            .documents-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .quote-visual {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .nav-links {
-                gap: 0.3rem;
-            }
-
-            .nav-link {
-                display: none;
-            }
-
-            footer {
-                padding: 3rem 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-content">
             <a href="#" class="logo">
-                <img src="nuevas_imagenes/logo_sntss_jal_sec_3.png" alt="Logo Sindicato" class="logo-image">
+                <img src="img/logo/logo_sntss_jal_sec_3.png" alt="Logo Sindicato" class="logo-image">
                 <div class="logo-text">
                     <span class="logo-title">UMF #1 - Representación Sindical</span>
                     <span class="logo-subtitle">Sección Sindical</span>
@@ -1063,7 +24,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (comentado) -->
+    <!--
     <section class="hero">
         <div class="hero-container">
             <div class="hero-visual">
@@ -1071,35 +33,107 @@
                 <div class="corner-decoration corner-tr"></div>
                 <div class="corner-decoration corner-bl"></div>
                 <div class="corner-decoration corner-br"></div>
-                
+
                 <div class="hero-content">
-                    <img src="nuevas_imagenes/logo_sntss_jal_sec_3.png" alt="Logo SNTSS Renovando e Innovando" class="hero-logo">
-                    
+                    <img src="img/logo/logo_sntss_jal_sec_3.png" alt="Logo SNTSS Renovando e Innovando" class="hero-logo">
+
                     <div class="hero-badge">
                         <span>★</span> ¡Lo logramos juntos!
                     </div>
-                    
+
                     <h1 class="hero-title">
                         Su voto nos trajo <em>hasta aquí.</em>
                     </h1>
-                
+
                     <h2>
                         ¡Gracias!
                     </h2>
-                    
+
                     <p class="hero-subtitle">
                         Ahora viene lo importante, cumplir.
                     </p>
-                    
+
                     <p class="hero-description">
-                        A partir de hoy, el compromiso es simple; dar seguimiento, informar con 
+                        A partir de hoy, el compromiso es simple; dar seguimiento, informar con
                         claridad y defender nuestros derechos con un equipo que responde.
                         <br><br>
                         Esto no termina en la elección: aquí comienza.
                     </p>
-                    
+
                     <div class="hero-buttons" style="justify-content: center;">
                         <a href="#documentos" class="btn-primary">Ver Documentos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Avisos Section -->
+    <section id="avisos" class="avisos-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>★</span> Avisos Importantes
+                </div>
+                <h2 class="section-title">Avisos</h2>
+                <p class="section-description">
+                    Mantente informado sobre los eventos y convocatorias más recientes
+                </p>
+            </div>
+
+            <div class="avisos-grid">
+                <!-- Aviso 1: Expo Mujer Programa -->
+                <div class="aviso-card" onclick="openModal2('avisoExpoMujerModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/6_de_marzo.jpeg" alt="Expo Mujer 2026 - Programa" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">6 de Marzo, 2026</span>
+                        <h3 class="aviso-title">Expo Mujer 2026 - Programa</h3>
+                        <p class="aviso-description">
+                            Conferencias, talleres y baile folclórico. Centro de Convenciones SNTSS, de 10:00 a 15:30 hrs.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Aviso 2: Invitación Expo Mujer -->
+                <div class="aviso-card" onclick="openModal2('avisoExpoMujer2Modal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/6_de_marzo_2.jpeg" alt="Invitación Expo Mujer" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">6 de Marzo, 2026</span>
+                        <h3 class="aviso-title">Invitación Expo Mujer</h3>
+                        <p class="aviso-description">
+                            Mujeres fuertes, empoderadas y valientes. 10:00-16:00 hrs. Av. Río Nilo 470, Col. San Carlos.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Aviso 3: Sorteo Crédito -->
+                <div class="aviso-card" onclick="openModal2('avisoSorteoModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/sorteo_credito.jpeg" alt="Sorteo de Crédito Hipotecario" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">23-27 Marzo, 2026</span>
+                        <h3 class="aviso-title">Sorteo Crédito Hipotecario y Mediano Plazo</h3>
+                        <p class="aviso-description">
+                            Inscripciones del 23 al 27 de marzo 2026. Sorteo presencial el 7 de abril. Cláusula 81 del CCT.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1120,32 +154,28 @@
             </div>
 
             <div class="team-photo-container">
-                <img src="planilla.jpg" alt="Integrantes de la planilla">
+                <img src="img/equipo/planilla.jpg" alt="Integrantes de la planilla">
             </div>
 
             <div id="contactos" class="team-members-list">
-                <!-- Member 1 - Carlos -->
                 <div class="team-member-card">
                     <h3 class="team-member-name">Carlos Ignacio Acevedo Gutierrez</h3>
                     <p class="team-member-role">Secretaría General</p>
                     <p class="team-member-position">Tel: 33 1222 7467</p>
                 </div>
 
-                <!-- Member 2 - Olimpia -->
                 <div class="team-member-card">
                     <h3 class="team-member-name">Olimpia Giovanna Calderon Escobedo</h3>
                     <p class="team-member-role">Secretaría del Interior</p>
                     <p class="team-member-position">Tel: 33 1476 4485</p>
                 </div>
 
-                <!-- Member 3 - Guadalupe -->
                 <div class="team-member-card">
                     <h3 class="team-member-name">Dra. Maria Guadalupe Calderon Nunez</h3>
                     <p class="team-member-role">Representante de Planilla</p>
                     <p class="team-member-position"></p>
                 </div>
 
-                <!-- Member 4 - Naim -->
                 <div class="team-member-card">
                     <h3 class="team-member-name">Dr. Naim Garcia Ramirez</h3>
                     <p class="team-member-role">Secretaría de Conflictos</p>
@@ -1169,8 +199,7 @@
             </div>
 
             <div class="documents-grid">
-                <!-- Contract Document -->
-                <a href="CONTRATO COLECTIVO DE TRABAJO 2025-2027.pdf" download class="document-card">
+                <a href="docs/contrato-colectivo-2025-2027.pdf" download class="document-card">
                     <div class="document-icon-wrapper">
                         <i data-lucide="file-text" style="width:28px;height:28px;color:var(--orange-dark);"></i>
                     </div>
@@ -1187,8 +216,7 @@
                     </div>
                 </a>
 
-                <!-- Estatutos Document -->
-                <a href="ESTATUTOS 2022 (1).pdf" download class="document-card">
+                <a href="docs/estatutos-sntss-2022.pdf" download class="document-card">
                     <div class="document-icon-wrapper">
                         <i data-lucide="scroll" style="width:28px;height:28px;color:var(--orange-dark);"></i>
                     </div>
@@ -1225,198 +253,411 @@
                 <!-- Calendarios -->
                 <a href="#" class="resource-card" onclick="openModal(event)">
                     <div class="resource-icon">
-                        <i data-lucide="calendar-days" style="width: 50px; height: 50px;"></i>
+                        <i data-lucide="calendar-days" style="width: 40px; height: 40px;"></i>
                     </div>
-                    <h3 class="resource-title">Nomina</h3>
-                    <p class="resource-description">
-                        Consulta los calendarios oficiales, días festivos y pagos de nomina.
-                    </p>
-                    <span class="resource-badge">
-                        <span>Ver Calendarios</span>
-                        <i data-lucide="chevron-right"></i>
-                    </span>
+                    <div>
+                        <h3 class="resource-title">Nomina</h3>
+                        <p class="resource-description">
+                            Consulta los calendarios oficiales, días festivos y pagos de nomina.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Calendarios</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
                 </a>
 
                 <!-- Vacaciones -->
                 <a href="#" class="resource-card" onclick="openVacacionesModal(event)">
                     <div class="resource-icon">
-                        <i data-lucide="palmtree" style="width: 50px; height: 50px;"></i>
+                        <i data-lucide="palmtree" style="width: 40px; height: 40px;"></i>
                     </div>
-                    <h3 class="resource-title">Vacaciones</h3>
-                    <p class="resource-description">
-                        Información sobre períodos vacacionales, derechos y procedimientos para solicitud
-                    </p>
-                    <span class="resource-badge">
-                        <span>Ver Información</span>
-                        <i data-lucide="chevron-right"></i>
-                    </span>
+                    <div>
+                        <h3 class="resource-title">Vacaciones</h3>
+                        <p class="resource-description">
+                            Información sobre períodos vacacionales, derechos y procedimientos para solicitud
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Información</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
                 </a>
 
-                <!-- Caja de Ahorros -->
+                <!-- Caja de Ahorros Préstamos -->
                 <a href="#" class="resource-card" onclick="openPrestamosModal(event)">
                     <div class="resource-icon">
-                        <img src="icono_caja.png" alt="Caja de Ahorros" style="width: 100%; height: 100%; object-fit: contain;">
+                        <img src="img/recursos/icono_caja.png" alt="Caja de Ahorros" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <h3 class="resource-title">Caja de Ahorros (Préstamos)</h3>
-                    <p class="resource-description">
-                        Calendario para la gestion de préstamos excepcionales.
-                    </p>
-                    <span class="resource-badge">
-                        <span>Más Detalles</span>
-                        <i data-lucide="chevron-right"></i>
-                    </span>
+                    <div>
+                        <h3 class="resource-title">Caja de Ahorros (Préstamos)</h3>
+                        <p class="resource-description">
+                            Calendario para la gestion de préstamos excepcionales.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Más Detalles</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
                 </a>
 
-                <!-- Caja de Ahorros -->
+                <!-- Caja de Ahorros Requisitos -->
                 <a href="#" class="resource-card" onclick="openCajaModal(event)">
                     <div class="resource-icon">
-                        <img src="icono_caja.png" alt="Caja de Ahorros" style="width: 100%; height: 100%; object-fit: contain;">
+                        <img src="img/recursos/icono_caja.png" alt="Caja de Ahorros" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <h3 class="resource-title">Caja de Ahorros (Requisitos)</h3>
-                    <p class="resource-description">
-                        Consulta sobre préstamos, ahorros y beneficios de la caja de ahorros sindical
-                    </p>
-                    <span class="resource-badge">
-                        <span>Más Detalles</span>
-                        <i data-lucide="chevron-right"></i>
-                    </span>
+                    <div>
+                        <h3 class="resource-title">Caja de Ahorros (Requisitos)</h3>
+                        <p class="resource-description">
+                            Consulta sobre préstamos, ahorros y beneficios de la caja de ahorros sindical
+                        </p>
+                        <span class="resource-badge">
+                            <span>Más Detalles</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
                 </a>
 
                 <!-- Directorio -->
                 <a href="#" class="resource-card" onclick="openDirectorioModal(event)">
                     <div class="resource-icon">
-                        <img src="sntss-logo.png" alt="SNTSS" style="width: 100%; height: 100%; object-fit: contain;">
+                        <img src="img/recursos/sntss-logo.png" alt="SNTSS" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <h3 class="resource-title">Directorio del Sindicato</h3>
-                    <p class="resource-description">
-                        Contactos de los representantes sindicales y oficinas de atención
-                    </p>
-                    <span class="resource-badge">
-                        <span>Ver Directorio</span>
-                        <i data-lucide="chevron-right"></i>
-                    </span>
+                    <div>
+                        <h3 class="resource-title">Directorio del Sindicato</h3>
+                        <p class="resource-description">
+                            Contactos de los representantes sindicales y oficinas de atención
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Directorio</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
                 </a>
 
                 <!-- Unidades y Guardias -->
                 <a href="#" class="resource-card" onclick="openModal2('unidadesModal', event)">
-                    <div class="resource-icon"><i data-lucide="clock" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Horario de Unidades y Guardias</h3>
-                    <p class="resource-description">Horario de unidades y jornadas acumuladas, descansos y guardias</p>
-                    <span class="resource-badge"><span>Ver Horarios</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="clock" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Horario de Unidades y Guardias</h3>
+                        <p class="resource-description">Horario de unidades y jornadas acumuladas, descansos y guardias</p>
+                        <span class="resource-badge"><span>Ver Horarios</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- TXT Tiempo por Tiempo -->
                 <a href="#" class="resource-card" onclick="openModal2('txtModal', event)">
-                    <div class="resource-icon"><i data-lucide="repeat" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">TXT - Convenio Trabajador por Trabajador</h3>
-                    <p class="resource-description">Lo que debes saber sobre el convenio TXT vigente 2026</p>
-                    <span class="resource-badge"><span>Ver Info</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="repeat" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">TXT - Convenio Trabajador por Trabajador</h3>
+                        <p class="resource-description">Lo que debes saber sobre el convenio TXT vigente 2026</p>
+                        <span class="resource-badge"><span>Ver Info</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Maternidad -->
                 <a href="#" class="resource-card" onclick="openModal2('maternidadModal', event)">
-                    <div class="resource-icon"><i data-lucide="heart" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Cláusula 77 - Maternidad</h3>
-                    <p class="resource-description">Derechos de maternidad, apoyo económico y lactancia</p>
-                    <span class="resource-badge"><span>Ver Info</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="heart" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Cláusula 77 - Maternidad</h3>
+                        <p class="resource-description">Derechos de maternidad, apoyo económico y lactancia</p>
+                        <span class="resource-badge"><span>Ver Info</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Deducciones -->
                 <a href="#" class="resource-card" onclick="openModal2('deduccionesModal', event)">
-                    <div class="resource-icon"><i data-lucide="file-minus" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Deducciones</h3>
-                    <p class="resource-description">Tabla de deducciones y descuentos aplicados al trabajador</p>
-                    <span class="resource-badge"><span>Ver Tabla</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="file-minus" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Deducciones</h3>
+                        <p class="resource-description">Tabla de deducciones y descuentos aplicados al trabajador</p>
+                        <span class="resource-badge"><span>Ver Tabla</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Seguro Facultativo -->
                 <a href="#" class="resource-card" onclick="openModal2('seguroModal', event)">
-                    <div class="resource-icon"><i data-lucide="shield" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Seguro Facultativo Nuevo Ingreso</h3>
-                    <p class="resource-description">Requisitos para seguro facultativo de nuevo ingreso 2025</p>
-                    <span class="resource-badge"><span>Ver Requisitos</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="shield" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Seguro Facultativo Nuevo Ingreso</h3>
+                        <p class="resource-description">Requisitos para seguro facultativo de nuevo ingreso 2025</p>
+                        <span class="resource-badge"><span>Ver Requisitos</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Constancia de Afiliación -->
                 <a href="#" class="resource-card" onclick="openModal2('constanciaModal', event)">
-                    <div class="resource-icon"><i data-lucide="file-check" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Constancia de Afiliación</h3>
-                    <p class="resource-description">Documentos necesarios para tramitar tu constancia de afiliación</p>
-                    <span class="resource-badge"><span>Ver Trámite</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="file-check" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Constancia de Afiliación</h3>
+                        <p class="resource-description">Documentos necesarios para tramitar tu constancia de afiliación</p>
+                        <span class="resource-badge"><span>Ver Trámite</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Parentesco Agremiado -->
                 <a href="#" class="resource-card" onclick="openModal2('parentescoModal', event)">
-                    <div class="resource-icon"><i data-lucide="users" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Parentesco por Consanguinidad</h3>
-                    <p class="resource-description">Gráfica del parentesco por consanguinidad del agremiado</p>
-                    <span class="resource-badge"><span>Ver Gráfica</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="users" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Parentesco por Consanguinidad</h3>
+                        <p class="resource-description">Gráfica del parentesco por consanguinidad del agremiado</p>
+                        <span class="resource-badge"><span>Ver Gráfica</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Becas SINABEHT Registro -->
                 <a href="#" class="resource-card" onclick="openModal2('becasRegistroModal', event)">
-                    <div class="resource-icon"><i data-lucide="graduation-cap" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Becas SINABEHT - Registro</h3>
-                    <p class="resource-description">Convocatoria registro para becas SINABEHT 2025 B</p>
-                    <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="graduation-cap" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Becas SINABEHT - Registro</h3>
+                        <p class="resource-description">Convocatoria registro para becas SINABEHT 2025 B</p>
+                        <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Becas SINABEHT Pago -->
                 <a href="#" class="resource-card" onclick="openModal2('becasPagoModal', event)">
-                    <div class="resource-icon"><i data-lucide="badge-dollar-sign" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Becas SINABEHT - Pago</h3>
-                    <p class="resource-description">Convocatoria pago de becas SINABEHT calendario 2025 A</p>
-                    <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="badge-dollar-sign" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Becas SINABEHT - Pago</h3>
+                        <p class="resource-description">Convocatoria pago de becas SINABEHT calendario 2025 A</p>
+                        <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Becas SINABEHT 100% Promedio -->
                 <a href="#" class="resource-card" onclick="openModal2('becas100Modal', event)">
-                    <div class="resource-icon"><i data-lucide="star" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Evento Excelencia Académica</h3>
-                    <p class="resource-description">Convocatoria para estudiantes con promedio de 100 SINABEHT</p>
-                    <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="star" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Evento Excelencia Académica</h3>
+                        <p class="resource-description">Convocatoria para estudiantes con promedio de 100 SINABEHT</p>
+                        <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Zoo Guadalajara -->
                 <a href="#" class="resource-card" onclick="openModal2('zooModal', event)">
-                    <div class="resource-icon"><i data-lucide="ticket" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Descuento Zoo Guadalajara</h3>
-                    <p class="resource-description">Aprovecha el gran descuento en el Zoo Guadalajara</p>
-                    <span class="resource-badge"><span>Ver Promoción</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="ticket" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Descuento Zoo Guadalajara</h3>
+                        <p class="resource-description">Aprovecha el gran descuento en el Zoo Guadalajara</p>
+                        <span class="resource-badge"><span>Ver Promoción</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Directorio UMF 12-70 -->
                 <a href="#" class="resource-card" onclick="openModal2('umf1270Modal', event)">
-                    <div class="resource-icon"><i data-lucide="map-pin" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Directorio UMF (12 - 70)</h3>
-                    <p class="resource-description">Claves y unidades de medicina familiar del No. 12 al 70</p>
-                    <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="map-pin" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Directorio UMF (12 - 70)</h3>
+                        <p class="resource-description">Claves y unidades de medicina familiar del No. 12 al 70</p>
+                        <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Directorio UMF 71-169 -->
                 <a href="#" class="resource-card" onclick="openModal2('umf71169Modal', event)">
-                    <div class="resource-icon"><i data-lucide="map-pin" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Directorio UMF (71 - 169)</h3>
-                    <p class="resource-description">Claves y unidades de medicina familiar del No. 71 al 169</p>
-                    <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="map-pin" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Directorio UMF (71 - 169)</h3>
+                        <p class="resource-description">Claves y unidades de medicina familiar del No. 71 al 169</p>
+                        <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Directorio UMF 170-131 -->
                 <a href="#" class="resource-card" onclick="openModal2('umf170Modal', event)">
-                    <div class="resource-icon"><i data-lucide="map-pin" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Directorio UMF (170 - 131)</h3>
-                    <p class="resource-description">Claves y unidades de medicina familiar del No. 170 en adelante y PTOs</p>
-                    <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="map-pin" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Directorio UMF (170 - 131)</h3>
+                        <p class="resource-description">Claves y unidades de medicina familiar del No. 170 en adelante y PTOs</p>
+                        <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
                 <!-- Directorio 132-Velatorio -->
                 <a href="#" class="resource-card" onclick="openModal2('velatorioModal', event)">
-                    <div class="resource-icon"><i data-lucide="map-pin" style="width:50px;height:50px;"></i></div>
-                    <h3 class="resource-title">Directorio PTOs y Velatorio</h3>
-                    <p class="resource-description">Claves de PTOs enfermería del No. 132 al Velatorio Guadalajara</p>
-                    <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    <div class="resource-icon"><i data-lucide="map-pin" style="width:40px;height:40px;"></i></div>
+                    <div>
+                        <h3 class="resource-title">Directorio PTOs y Velatorio</h3>
+                        <p class="resource-description">Claves de PTOs enfermería del No. 132 al Velatorio Guadalajara</p>
+                        <span class="resource-badge"><span>Ver Directorio</span><i data-lucide="chevron-right"></i></span>
+                    </div>
                 </a>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Descuentos y Convenios Section -->
+    <section id="descuentos" class="descuentos-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>◇</span> Beneficios
+                </div>
+                <h2 class="section-title">Descuentos y Convenios</h2>
+                <p class="section-description">
+                    Aprovecha los convenios y descuentos exclusivos para trabajadores sindicalizados
+                </p>
+            </div>
+
+            <div class="descuentos-grid">
+                <!-- Lista de Convenios 1 -->
+                <div class="descuento-card" onclick="openModal2('descuento1Modal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/descuentos_1.png" alt="Lista de Convenios - Parte 1" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Lista de Convenios (Parte 1)</h3>
+                        <p class="descuento-description">Óptica Bosco, Seguros GNP, CF Moto, Royal Prestige, Joyería Nena y más</p>
+                        <span class="resource-badge"><span>Ver Lista</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Lista de Convenios 2 -->
+                <div class="descuento-card" onclick="openModal2('descuento2Modal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/descuentos_2.png" alt="Lista de Convenios - Parte 2" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Lista de Convenios (Parte 2)</h3>
+                        <p class="descuento-description">Óptica Briones, Selva Mágica, Eco Marcas, Acuario Sealand, Cinépolis y más</p>
+                        <span class="resource-badge"><span>Ver Lista</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Lista de Convenios 3 -->
+                <div class="descuento-card" onclick="openModal2('descuento3Modal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/descuentos_3.png" alt="Lista de Convenios - Parte 3" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Lista de Convenios (Parte 3)</h3>
+                        <p class="descuento-description">Blue Rok, El Tango, VitalHealth, Escuela CICREI, KidZania y más</p>
+                        <span class="resource-badge"><span>Ver Lista</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Óptica Briones -->
+                <div class="descuento-card" onclick="openModal2('opticaBrionesModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/optica_briones.jpg" alt="Óptica Briones" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Óptica Briones</h3>
+                        <p class="descuento-description">20% y 30% de descuento en lentes y servicios ópticos</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Selva Mágica -->
+                <div class="descuento-card" onclick="openModal2('selvaMagicaModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/selva_magica.png" alt="Selva Mágica" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Selva Mágica</h3>
+                        <p class="descuento-description">50% de descuento en parque de diversiones</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Eco Marcas -->
+                <div class="descuento-card" onclick="openModal2('ecomarcasModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/ecomarcas.png" alt="Eco Marcas" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Eco Marcas</h3>
+                        <p class="descuento-description">20% y 30% de descuento</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Oír Bien -->
+                <div class="descuento-card" onclick="openModal2('obModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/ob.png" alt="Oír Bien" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Oír Bien</h3>
+                        <p class="descuento-description">10%, 20% y 30% de descuento en clínicas audiológicas</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- San Javier -->
+                <div class="descuento-card" onclick="openModal2('sanJavierModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/san_javier.png" alt="San Javier" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">San Javier</h3>
+                        <p class="descuento-description">10% de descuento</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Chimulco -->
+                <div class="descuento-card" onclick="openModal2('chimulcoModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/chimulco.png" alt="Chimulco" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Chimulco</h3>
+                        <p class="descuento-description">Descuentos especiales para agremiados</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- CLEU -->
+                <div class="descuento-card" onclick="openModal2('cleuModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/cleu.png" alt="CLEU" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">CLEU</h3>
+                        <p class="descuento-description">Convenio educativo</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- IESDA -->
+                <div class="descuento-card" onclick="openModal2('iesdaModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/iesda.png" alt="IESDA" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">IESDA</h3>
+                        <p class="descuento-description">Convenio educativo</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- IEU -->
+                <div class="descuento-card" onclick="openModal2('ieuModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/ieu.png" alt="IEU" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">IEU</h3>
+                        <p class="descuento-description">Convenio educativo</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Unisite -->
+                <div class="descuento-card" onclick="openModal2('unisiteModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/unisite.png" alt="Unisite" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Unisite</h3>
+                        <p class="descuento-description">Convenio educativo</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1429,7 +670,7 @@
                 <div class="corner-decoration corner-tr"></div>
                 <div class="corner-decoration corner-bl"></div>
                 <div class="corner-decoration corner-br"></div>
-                
+
                 <blockquote>
                     <span class="quote-mark">"</span>
                     <p class="quote-text">
@@ -1446,7 +687,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="nuevas_imagenes/logo_sntss_jal_sec_3.png" alt="Logo SNTSS" class="footer-logo-image">
+                <img src="img/logo/logo_sntss_jal_sec_3.png" alt="Logo SNTSS" class="footer-logo-image">
             </div>
             <p class="footer-text">
                 UMF #1 - Representación Sindical
@@ -1455,7 +696,38 @@
             <p class="footer-year">© Unidad de Medicina Familiar #1 - Representación Sindical</p>
         </div>
     </footer>
-    
+
+    <!-- Modales de Avisos -->
+    <div id="avisoExpoMujerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Expo Mujer 2026 - Programa</h3>
+                <button class="modal-close" onclick="closeModal('avisoExpoMujerModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/avisos/6_de_marzo.jpeg" alt="Expo Mujer 2026 - Programa" class="modal-image">
+        </div>
+    </div>
+
+    <div id="avisoExpoMujer2Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Invitación Expo Mujer 2026</h3>
+                <button class="modal-close" onclick="closeModal('avisoExpoMujer2Modal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/avisos/6_de_marzo_2.jpeg" alt="Invitación Expo Mujer" class="modal-image">
+        </div>
+    </div>
+
+    <div id="avisoSorteoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Sorteo Crédito Hipotecario y Mediano Plazo</h3>
+                <button class="modal-close" onclick="closeModal('avisoSorteoModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/avisos/sorteo_credito.jpeg" alt="Sorteo Crédito Hipotecario" class="modal-image">
+        </div>
+    </div>
+
     <!-- Modal para Calendario de Nomina -->
     <div id="nominaModal" class="modal">
         <div class="modal-content">
@@ -1465,9 +737,9 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            <img src="votaplantillaA_nomina.png" alt="Calendario de Pagos 2026" class="modal-image">
+            <img src="img/recursos/votaplantillaA_nomina.png" alt="Calendario de Pagos 2026" class="modal-image">
             <div class="modal-actions">
-                <a href="votaplantillaA_nomina.png" download="Calendario_Nomina_2026.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/votaplantillaA_nomina.png" download="Calendario_Nomina_2026.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i>
                     <span>Descargar Calendario</span>
                 </a>
@@ -1484,16 +756,16 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            <img src="votaplanillaA_rolvac.jpeg" alt="Roles Vacacionales 2026" class="modal-image">
+            <img src="img/recursos/votaplanillaA_rolvac.jpeg" alt="Roles Vacacionales 2026" class="modal-image">
             <div class="modal-actions">
-                <a href="votaplanillaA_rolvac.jpeg" download="Roles_Vacacionales_2026.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/votaplanillaA_rolvac.jpeg" download="Roles_Vacacionales_2026.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i>
                     <span>Descargar Tabla</span>
                 </a>
             </div>
         </div>
     </div>
-    
+
     <!-- Modal para Caja de Ahorros -->
     <div id="cajaModal" class="modal">
         <div class="modal-content">
@@ -1503,9 +775,9 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            <img src="votaplanillaA_caja.png" alt="Información Caja de Ahorros" class="modal-image">
+            <img src="img/recursos/votaplanillaA_caja.png" alt="Información Caja de Ahorros" class="modal-image">
             <div class="modal-actions">
-                <a href="votaplanillaA_caja.png" download="Caja_Ahorros_SNTSS.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/votaplanillaA_caja.png" download="Caja_Ahorros_SNTSS.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i>
                     <span>Descargar Información</span>
                 </a>
@@ -1522,9 +794,9 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            <img src="votaplaniallaA_comite.jpeg" alt="Directorio Comité Seccional" class="modal-image">
+            <img src="img/recursos/votaplaniallaA_comite.jpeg" alt="Directorio Comité Seccional" class="modal-image">
             <div class="modal-actions">
-                <a href="votaplaniallaA_comite.jpeg" download="Directorio_Comite_Seccional_2025-2031.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/votaplaniallaA_comite.jpeg" download="Directorio_Comite_Seccional_2025-2031.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i>
                     <span>Descargar Directorio</span>
                 </a>
@@ -1541,160 +813,26 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            <img src="votaplanillaA_prestamos.jpeg" alt="Calendario de Préstamos" class="modal-image">
+            <img src="img/recursos/votaplanillaA_prestamos.jpeg" alt="Calendario de Préstamos" class="modal-image">
             <div class="modal-actions">
-                <a href="votaplanillaA_prestamos.jpeg" download="Calendario_Prestamos_Excepcionales_2025.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/votaplanillaA_prestamos.jpeg" download="Calendario_Prestamos_Excepcionales_2025.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i>
                     <span>Descargar Calendario</span>
                 </a>
             </div>
         </div>
     </div>
-    
-    <script>
-        // Funciones para el modal de Nomina
-        function openModal(event) {
-            event.preventDefault();
-            document.getElementById('nominaModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Reinicializar iconos después de abrir el modal
-            setTimeout(() => lucide.createIcons(), 100);
-        }
 
-        // Funciones para el modal de Vacaciones
-        function openVacacionesModal(event) {
-            event.preventDefault();
-            document.getElementById('vacacionesModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Reinicializar iconos después de abrir el modal
-            setTimeout(() => lucide.createIcons(), 100);
-        }
-
-        // Funciones para el modal de Caja de Ahorros
-        function openCajaModal(event) {
-            event.preventDefault();
-            document.getElementById('cajaModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Reinicializar iconos después de abrir el modal
-            setTimeout(() => lucide.createIcons(), 100);
-        }
-
-        // Funciones para el modal de Directorio
-        function openDirectorioModal(event) {
-            event.preventDefault();
-            document.getElementById('directorioModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Reinicializar iconos después de abrir el modal
-            setTimeout(() => lucide.createIcons(), 100);
-        }
-
-        // Funciones para el modal de Préstamos
-        function openPrestamosModal(event) {
-            event.preventDefault();
-            document.getElementById('prestamosModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Reinicializar iconos después de abrir el modal
-            setTimeout(() => lucide.createIcons(), 100);
-        }
-
-        function closeModal(modalId) {
-            if (modalId) {
-                document.getElementById(modalId).classList.remove('active');
-            } else {
-                // Cerrar cualquier modal abierto
-                document.querySelectorAll('.modal').forEach(modal => {
-                    modal.classList.remove('active');
-                });
-            }
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cerrar modal al hacer clic fuera de él
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                closeModal();
-            }
-        }
-
-        // Cerrar modal con tecla ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Manejar el botón "back" del navegador (especialmente para Android)
-        // Agregar entrada al historial cuando se abre un modal
-        function addHistoryEntry() {
-            history.pushState({ modalOpen: true }, '');
-        }
-
-        // Detectar cuando el usuario presiona el botón "back"
-        window.addEventListener('popstate', function(event) {
-            // Verificar si hay algún modal abierto
-            const openModal = document.querySelector('.modal.active');
-            if (openModal) {
-                // Cerrar el modal en lugar de salir de la página
-                closeModal();
-                // Prevenir que se vuelva a agregar al historial
-                event.preventDefault();
-            }
-        });
-
-        // Modificar las funciones de apertura para agregar entrada al historial
-        const originalOpenModal = openModal;
-        openModal = function(event) {
-            originalOpenModal(event);
-            addHistoryEntry();
-        };
-
-        const originalOpenVacacionesModal = openVacacionesModal;
-        openVacacionesModal = function(event) {
-            originalOpenVacacionesModal(event);
-            addHistoryEntry();
-        };
-
-        const originalOpenCajaModal = openCajaModal;
-        openCajaModal = function(event) {
-            originalOpenCajaModal(event);
-            addHistoryEntry();
-        };
-
-        const originalOpenDirectorioModal = openDirectorioModal;
-        openDirectorioModal = function(event) {
-            originalOpenDirectorioModal(event);
-            addHistoryEntry();
-        };
-
-        const originalOpenPrestamosModal = openPrestamosModal;
-        openPrestamosModal = function(event) {
-            originalOpenPrestamosModal(event);
-            addHistoryEntry();
-        };
-
-        // Función genérica para abrir modales adicionales
-        function openModal2(modalId, event) {
-            event.preventDefault();
-            document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden';
-            addHistoryEntry();
-            setTimeout(() => lucide.createIcons(), 100);
-        }
-
-        // Inicializar iconos de Lucide
-        lucide.createIcons();
-    </script>
-
-    <!-- Modales nuevas imágenes -->
+    <!-- Modales de recursos (nuevas_imagenes) -->
     <div id="unidadesModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Horario de Unidades y Jornadas</h3>
                 <button class="modal-close" onclick="closeModal('unidadesModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/unidades_guardias.png" alt="Horario Unidades" class="modal-image">
+            <img src="img/recursos/unidades_guardias.png" alt="Horario Unidades" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/unidades_guardias.png" download="Horario_Unidades_Guardias.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/unidades_guardias.png" download="Horario_Unidades_Guardias.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1707,9 +845,9 @@
                 <h3 class="modal-title">TXT - Convenio Trabajador por Trabajador</h3>
                 <button class="modal-close" onclick="closeModal('txtModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/tiempo_por_tiempo(1).jpeg" alt="TXT Convenio" class="modal-image">
+            <img src="img/recursos/tiempo_por_tiempo(1).jpeg" alt="TXT Convenio" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/tiempo_por_tiempo(1).jpeg" download="TXT_Convenio_2026.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/tiempo_por_tiempo(1).jpeg" download="TXT_Convenio_2026.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1722,9 +860,9 @@
                 <h3 class="modal-title">Cláusula 77 - Maternidad y Lactancia</h3>
                 <button class="modal-close" onclick="closeModal('maternidadModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/maternidad.jpeg" alt="Maternidad" class="modal-image">
+            <img src="img/recursos/maternidad.jpeg" alt="Maternidad" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/maternidad.jpeg" download="Clausula_77_Maternidad.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/maternidad.jpeg" download="Clausula_77_Maternidad.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1737,9 +875,9 @@
                 <h3 class="modal-title">Tabla de Deducciones</h3>
                 <button class="modal-close" onclick="closeModal('deduccionesModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/deducciones.jpeg" alt="Deducciones" class="modal-image">
+            <img src="img/recursos/deducciones.jpeg" alt="Deducciones" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/deducciones.jpeg" download="Tabla_Deducciones.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/deducciones.jpeg" download="Tabla_Deducciones.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1752,9 +890,9 @@
                 <h3 class="modal-title">Seguro Facultativo Nuevo Ingreso 2025</h3>
                 <button class="modal-close" onclick="closeModal('seguroModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/seguro_facultativo_nuevo_ingreso.jpeg" alt="Seguro Facultativo" class="modal-image">
+            <img src="img/recursos/seguro_facultativo_nuevo_ingreso.jpeg" alt="Seguro Facultativo" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/seguro_facultativo_nuevo_ingreso.jpeg" download="Seguro_Facultativo_Nuevo_Ingreso.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/seguro_facultativo_nuevo_ingreso.jpeg" download="Seguro_Facultativo_Nuevo_Ingreso.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1767,9 +905,9 @@
                 <h3 class="modal-title">Constancia de Afiliación</h3>
                 <button class="modal-close" onclick="closeModal('constanciaModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/constancia_afiliacion.png" alt="Constancia de Afiliación" class="modal-image">
+            <img src="img/recursos/constancia_afiliacion.png" alt="Constancia de Afiliación" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/constancia_afiliacion.png" download="Constancia_Afiliacion.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/constancia_afiliacion.png" download="Constancia_Afiliacion.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1782,9 +920,9 @@
                 <h3 class="modal-title">Parentesco por Consanguinidad del Agremiado</h3>
                 <button class="modal-close" onclick="closeModal('parentescoModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/agremiado.png" alt="Parentesco Agremiado" class="modal-image">
+            <img src="img/recursos/agremiado.png" alt="Parentesco Agremiado" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/agremiado.png" download="Parentesco_Consanguinidad_Agremiado.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/agremiado.png" download="Parentesco_Consanguinidad_Agremiado.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1797,9 +935,9 @@
                 <h3 class="modal-title">Becas SINABEHT - Registro 2025 B</h3>
                 <button class="modal-close" onclick="closeModal('becasRegistroModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/registro_sinabeht.png" alt="Registro Becas SINABEHT" class="modal-image">
+            <img src="img/recursos/registro_sinabeht.png" alt="Registro Becas SINABEHT" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/registro_sinabeht.png" download="Registro_Becas_SINABEHT_2025B.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/registro_sinabeht.png" download="Registro_Becas_SINABEHT_2025B.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1812,9 +950,9 @@
                 <h3 class="modal-title">Becas SINABEHT - Pago Calendario 2025 A</h3>
                 <button class="modal-close" onclick="closeModal('becasPagoModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/pago_beca_sinabeht.jpeg" alt="Pago Becas SINABEHT" class="modal-image">
+            <img src="img/recursos/pago_beca_sinabeht.jpeg" alt="Pago Becas SINABEHT" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/pago_beca_sinabeht.jpeg" download="Pago_Becas_SINABEHT_2025A.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/pago_beca_sinabeht.jpeg" download="Pago_Becas_SINABEHT_2025A.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1827,9 +965,9 @@
                 <h3 class="modal-title">Evento Excelencia Académica - Promedio 100</h3>
                 <button class="modal-close" onclick="closeModal('becas100Modal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/beca_sinabeht_100_prom.jpeg" alt="Excelencia Académica" class="modal-image">
+            <img src="img/recursos/beca_sinabeht_100_prom.jpeg" alt="Excelencia Académica" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/beca_sinabeht_100_prom.jpeg" download="Evento_Excelencia_Academica_SINABEHT.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/beca_sinabeht_100_prom.jpeg" download="Evento_Excelencia_Academica_SINABEHT.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1842,9 +980,9 @@
                 <h3 class="modal-title">Descuento Zoo Guadalajara 2026</h3>
                 <button class="modal-close" onclick="closeModal('zooModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/zoo.jpeg" alt="Zoo Guadalajara" class="modal-image">
+            <img src="img/recursos/zoo.jpeg" alt="Zoo Guadalajara" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/zoo.jpeg" download="Descuento_Zoo_Guadalajara.jpeg" class="modal-btn modal-btn-download">
+                <a href="img/recursos/zoo.jpeg" download="Descuento_Zoo_Guadalajara.jpeg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1857,9 +995,9 @@
                 <h3 class="modal-title">Directorio UMF No. 12 al 70</h3>
                 <button class="modal-close" onclick="closeModal('umf1270Modal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/12_70.png" alt="Directorio UMF 12-70" class="modal-image">
+            <img src="img/recursos/12_70.png" alt="Directorio UMF 12-70" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/12_70.png" download="Directorio_UMF_12_70.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/12_70.png" download="Directorio_UMF_12_70.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1872,9 +1010,9 @@
                 <h3 class="modal-title">Directorio UMF No. 71 al 169</h3>
                 <button class="modal-close" onclick="closeModal('umf71169Modal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/71_169.png" alt="Directorio UMF 71-169" class="modal-image">
+            <img src="img/recursos/71_169.png" alt="Directorio UMF 71-169" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/71_169.png" download="Directorio_UMF_71_169.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/71_169.png" download="Directorio_UMF_71_169.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1887,9 +1025,9 @@
                 <h3 class="modal-title">Directorio UMF No. 170 y PTOs</h3>
                 <button class="modal-close" onclick="closeModal('umf170Modal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/170_131.png" alt="Directorio UMF 170+" class="modal-image">
+            <img src="img/recursos/170_131.png" alt="Directorio UMF 170+" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/170_131.png" download="Directorio_UMF_170_PTOs.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/170_131.png" download="Directorio_UMF_170_PTOs.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
@@ -1902,14 +1040,146 @@
                 <h3 class="modal-title">Directorio PTOs Enfermería y Velatorio</h3>
                 <button class="modal-close" onclick="closeModal('velatorioModal')"><i data-lucide="x"></i></button>
             </div>
-            <img src="nuevas_imagenes/132_velatorio.png" alt="Directorio PTOs Velatorio" class="modal-image">
+            <img src="img/recursos/132_velatorio.png" alt="Directorio PTOs Velatorio" class="modal-image">
             <div class="modal-actions">
-                <a href="nuevas_imagenes/132_velatorio.png" download="Directorio_PTOs_Velatorio.png" class="modal-btn modal-btn-download">
+                <a href="img/recursos/132_velatorio.png" download="Directorio_PTOs_Velatorio.png" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>
         </div>
     </div>
 
+    <!-- Modales de Descuentos -->
+    <div id="descuento1Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Lista de Convenios (Parte 1)</h3>
+                <button class="modal-close" onclick="closeModal('descuento1Modal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/descuentos_1.png" alt="Lista de Convenios Parte 1" class="modal-image">
+        </div>
+    </div>
+
+    <div id="descuento2Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Lista de Convenios (Parte 2)</h3>
+                <button class="modal-close" onclick="closeModal('descuento2Modal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/descuentos_2.png" alt="Lista de Convenios Parte 2" class="modal-image">
+        </div>
+    </div>
+
+    <div id="descuento3Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Lista de Convenios (Parte 3)</h3>
+                <button class="modal-close" onclick="closeModal('descuento3Modal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/descuentos_3.png" alt="Lista de Convenios Parte 3" class="modal-image">
+        </div>
+    </div>
+
+    <div id="opticaBrionesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Óptica Briones</h3>
+                <button class="modal-close" onclick="closeModal('opticaBrionesModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/optica_briones.jpg" alt="Óptica Briones" class="modal-image">
+        </div>
+    </div>
+
+    <div id="selvaMagicaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Selva Mágica</h3>
+                <button class="modal-close" onclick="closeModal('selvaMagicaModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/selva_magica.png" alt="Selva Mágica" class="modal-image">
+        </div>
+    </div>
+
+    <div id="ecomarcasModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Eco Marcas</h3>
+                <button class="modal-close" onclick="closeModal('ecomarcasModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/ecomarcas.png" alt="Eco Marcas" class="modal-image">
+        </div>
+    </div>
+
+    <div id="obModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Oír Bien - Clínicas Audiológicas</h3>
+                <button class="modal-close" onclick="closeModal('obModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/ob.png" alt="Oír Bien" class="modal-image">
+        </div>
+    </div>
+
+    <div id="sanJavierModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">San Javier</h3>
+                <button class="modal-close" onclick="closeModal('sanJavierModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/san_javier.png" alt="San Javier" class="modal-image">
+        </div>
+    </div>
+
+    <div id="chimulcoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Chimulco</h3>
+                <button class="modal-close" onclick="closeModal('chimulcoModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/chimulco.png" alt="Chimulco" class="modal-image">
+        </div>
+    </div>
+
+    <div id="cleuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">CLEU</h3>
+                <button class="modal-close" onclick="closeModal('cleuModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/cleu.png" alt="CLEU" class="modal-image">
+        </div>
+    </div>
+
+    <div id="iesdaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">IESDA</h3>
+                <button class="modal-close" onclick="closeModal('iesdaModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/iesda.png" alt="IESDA" class="modal-image">
+        </div>
+    </div>
+
+    <div id="ieuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">IEU</h3>
+                <button class="modal-close" onclick="closeModal('ieuModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/ieu.png" alt="IEU" class="modal-image">
+        </div>
+    </div>
+
+    <div id="unisiteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Unisite</h3>
+                <button class="modal-close" onclick="closeModal('unisiteModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/unisite.png" alt="Unisite" class="modal-image">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

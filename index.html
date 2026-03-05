@@ -405,46 +405,6 @@
                     </div>
                 </a>
 
-                <!-- Becas SINABEHT Registro -->
-                <a href="#" class="resource-card" onclick="openModal2('becasRegistroModal', event)">
-                    <div class="resource-icon"><i data-lucide="graduation-cap" style="width:40px;height:40px;"></i></div>
-                    <div>
-                        <h3 class="resource-title">Becas SINABEHT - Registro</h3>
-                        <p class="resource-description">Convocatoria registro para becas SINABEHT 2025 B</p>
-                        <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Becas SINABEHT Pago -->
-                <a href="#" class="resource-card" onclick="openModal2('becasPagoModal', event)">
-                    <div class="resource-icon"><i data-lucide="badge-dollar-sign" style="width:40px;height:40px;"></i></div>
-                    <div>
-                        <h3 class="resource-title">Becas SINABEHT - Pago</h3>
-                        <p class="resource-description">Convocatoria pago de becas SINABEHT calendario 2025 A</p>
-                        <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Becas SINABEHT 100% Promedio -->
-                <a href="#" class="resource-card" onclick="openModal2('becas100Modal', event)">
-                    <div class="resource-icon"><i data-lucide="star" style="width:40px;height:40px;"></i></div>
-                    <div>
-                        <h3 class="resource-title">Evento Excelencia Académica</h3>
-                        <p class="resource-description">Convocatoria para estudiantes con promedio de 100 SINABEHT</p>
-                        <span class="resource-badge"><span>Ver Convocatoria</span><i data-lucide="chevron-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Zoo Guadalajara -->
-                <a href="#" class="resource-card" onclick="openModal2('zooModal', event)">
-                    <div class="resource-icon"><i data-lucide="ticket" style="width:40px;height:40px;"></i></div>
-                    <div>
-                        <h3 class="resource-title">Descuento Zoo Guadalajara</h3>
-                        <p class="resource-description">Aprovecha el gran descuento en el Zoo Guadalajara</p>
-                        <span class="resource-badge"><span>Ver Promoción</span><i data-lucide="chevron-right"></i></span>
-                    </div>
-                </a>
-
                 <!-- Directorio UMF 12-70 -->
                 <a href="#" class="resource-card" onclick="openModal2('umf1270Modal', event)">
                     <div class="resource-icon"><i data-lucide="map-pin" style="width:40px;height:40px;"></i></div>
@@ -655,6 +615,18 @@
                     <div class="descuento-info">
                         <h3 class="descuento-title">Unisite</h3>
                         <p class="descuento-description">Convenio educativo</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Zoo Guadalajara -->
+                <div class="descuento-card" onclick="openModal2('zooModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/recursos/zoo.jpeg" alt="Zoo Guadalajara" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Zoo Guadalajara</h3>
+                        <p class="descuento-description">Descuento especial para agremiados</p>
                         <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
                     </div>
                 </div>
@@ -929,66 +901,6 @@
         </div>
     </div>
 
-    <div id="becasRegistroModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Becas SINABEHT - Registro 2025 B</h3>
-                <button class="modal-close" onclick="closeModal('becasRegistroModal')"><i data-lucide="x"></i></button>
-            </div>
-            <img src="img/recursos/registro_sinabeht.png" alt="Registro Becas SINABEHT" class="modal-image">
-            <div class="modal-actions">
-                <a href="img/recursos/registro_sinabeht.png" download="Registro_Becas_SINABEHT_2025B.png" class="modal-btn modal-btn-download">
-                    <i data-lucide="download"></i><span>Descargar</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div id="becasPagoModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Becas SINABEHT - Pago Calendario 2025 A</h3>
-                <button class="modal-close" onclick="closeModal('becasPagoModal')"><i data-lucide="x"></i></button>
-            </div>
-            <img src="img/recursos/pago_beca_sinabeht.jpeg" alt="Pago Becas SINABEHT" class="modal-image">
-            <div class="modal-actions">
-                <a href="img/recursos/pago_beca_sinabeht.jpeg" download="Pago_Becas_SINABEHT_2025A.jpeg" class="modal-btn modal-btn-download">
-                    <i data-lucide="download"></i><span>Descargar</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div id="becas100Modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Evento Excelencia Académica - Promedio 100</h3>
-                <button class="modal-close" onclick="closeModal('becas100Modal')"><i data-lucide="x"></i></button>
-            </div>
-            <img src="img/recursos/beca_sinabeht_100_prom.jpeg" alt="Excelencia Académica" class="modal-image">
-            <div class="modal-actions">
-                <a href="img/recursos/beca_sinabeht_100_prom.jpeg" download="Evento_Excelencia_Academica_SINABEHT.jpeg" class="modal-btn modal-btn-download">
-                    <i data-lucide="download"></i><span>Descargar</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div id="zooModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Descuento Zoo Guadalajara 2026</h3>
-                <button class="modal-close" onclick="closeModal('zooModal')"><i data-lucide="x"></i></button>
-            </div>
-            <img src="img/recursos/zoo.jpeg" alt="Zoo Guadalajara" class="modal-image">
-            <div class="modal-actions">
-                <a href="img/recursos/zoo.jpeg" download="Descuento_Zoo_Guadalajara.jpeg" class="modal-btn modal-btn-download">
-                    <i data-lucide="download"></i><span>Descargar</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <div id="umf1270Modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1177,6 +1089,21 @@
                 <button class="modal-close" onclick="closeModal('unisiteModal')"><i data-lucide="x"></i></button>
             </div>
             <img src="img/descuentos/unisite.png" alt="Unisite" class="modal-image">
+        </div>
+    </div>
+
+    <div id="zooModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Descuento Zoo Guadalajara 2026</h3>
+                <button class="modal-close" onclick="closeModal('zooModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/recursos/zoo.jpeg" alt="Zoo Guadalajara" class="modal-image">
+            <div class="modal-actions">
+                <a href="img/recursos/zoo.jpeg" download="Descuento_Zoo_Guadalajara.jpeg" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i><span>Descargar</span>
+                </a>
+            </div>
         </div>
     </div>
 

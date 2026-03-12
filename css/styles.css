@@ -338,12 +338,18 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    justify-items: center;
+}
+
+.avisos-grid .aviso-card {
+    max-width: 444px;
+    width: 100%;
 }
 
 .aviso-card {
     background: var(--cream);
     border: 2px solid var(--border-light);
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -362,8 +368,9 @@ nav {
 
 .aviso-image-container {
     width: 100%;
-    aspect-ratio: 4/5;
+    height: 548px;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
 }
 
 .aviso-image {
@@ -1195,6 +1202,7 @@ footer {
     }
 
     .aviso-image-container {
+        height: auto;
         aspect-ratio: 3/4;
     }
 

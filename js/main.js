@@ -51,5 +51,79 @@ window.addEventListener('popstate', function(event) {
     }
 });
 
+// Calendario Carousel
+var calendarioMeses = [
+    { archivo: 'ene_26.jpeg', nombre: 'Enero 2026' },
+    { archivo: 'feb_26.jpeg', nombre: 'Febrero 2026' },
+    { archivo: 'mar_26.jpeg', nombre: 'Marzo 2026' },
+    { archivo: 'abr_26.jpeg', nombre: 'Abril 2026' },
+    { archivo: 'may_26.jpeg', nombre: 'Mayo 2026' },
+    { archivo: 'jun_26.jpeg', nombre: 'Junio 2026' },
+    { archivo: 'jul_26.jpeg', nombre: 'Julio 2026' },
+    { archivo: 'ago_26.jpeg', nombre: 'Agosto 2026' },
+    { archivo: 'sep_26.jpeg', nombre: 'Septiembre 2026' },
+    { archivo: 'oct_26.jpeg', nombre: 'Octubre 2026' },
+    { archivo: 'nov_26.jpeg', nombre: 'Noviembre 2026' },
+    { archivo: 'dic_26.jpeg', nombre: 'Diciembre 2026' }
+];
+var mesActual = 0;
+
+function actualizarCalendario() {
+    var img = document.getElementById('calendarioImg');
+    var titulo = document.getElementById('calendarioMesTitle');
+    var contador = document.getElementById('calendarioContador');
+    var btns = document.querySelectorAll('.calendario-mes-btn');
+
+    img.src = 'img/recursos/calendario_26/' + calendarioMeses[mesActual].archivo;
+    img.alt = 'Calendario ' + calendarioMeses[mesActual].nombre;
+    titulo.textContent = calendarioMeses[mesActual].nombre;
+    contador.textContent = (mesActual + 1) + ' / 12';
+
+    btns.forEach(function(btn, i) {
+        btn.classList.toggle('active', i === mesActual);
+    });
+}
+
+function cambiarMes(dir) {
+    mesActual = (mesActual + dir + 12) % 12;
+    actualizarCalendario();
+}
+
+function irAMes(index) {
+    mesActual = index;
+    actualizarCalendario();
+}
+
+// Swipe en móvil para el calendario
+(function() {
+    var container = document.getElementById('calendarioImgContainer');
+    if (!container) return;
+    var startX = 0;
+    var startY = 0;
+
+    container.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    }, { passive: true });
+
+    container.addEventListener('touchend', function(e) {
+        var diffX = e.changedTouches[0].clientX - startX;
+        var diffY = e.changedTouches[0].clientY - startY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX < 0) cambiarMes(1);
+            else cambiarMes(-1);
+        }
+    }, { passive: true });
+})();
+
+// Flechas del teclado cuando el modal calendario está abierto
+document.addEventListener('keydown', function(e) {
+    var modal = document.getElementById('nominaModal');
+    if (modal && modal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') cambiarMes(-1);
+        if (e.key === 'ArrowRight') cambiarMes(1);
+    }
+});
+
 // Inicializar iconos de Lucide
 lucide.createIcons();

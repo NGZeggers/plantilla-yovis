@@ -237,9 +237,9 @@
                         <i data-lucide="calendar-days" style="width: 40px; height: 40px;"></i>
                     </div>
                     <div>
-                        <h3 class="resource-title">Nomina</h3>
+                        <h3 class="resource-title">Calendario</h3>
                         <p class="resource-description">
-                            Consulta los calendarios oficiales, días festivos y pagos de nomina.
+                            Consulta los calendarios mensuales 2026, días festivos y pagos de nomina.
                         </p>
                         <span class="resource-badge">
                             <span>Ver Calendarios</span>
@@ -671,21 +671,42 @@
         </div>
     </div>
 
-    <!-- Modal para Calendario de Nomina -->
+    <!-- Modal para Calendario 2026 -->
     <div id="nominaModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content calendario-modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Calendario de Pagos 2026</h3>
+                <h3 class="modal-title" id="calendarioMesTitle">Enero 2026</h3>
                 <button class="modal-close" onclick="closeModal('nominaModal')">
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            <img src="img/recursos/votaplantillaA_nomina.png" alt="Calendario de Pagos 2026" class="modal-image">
-            <div class="modal-actions">
-                <a href="img/recursos/votaplantillaA_nomina.png" download="Calendario_Nomina_2026.png" class="modal-btn modal-btn-download">
-                    <i data-lucide="download"></i>
-                    <span>Descargar Calendario</span>
-                </a>
+            <div class="calendario-carousel">
+                <button class="calendario-nav calendario-prev" onclick="cambiarMes(-1)" aria-label="Mes anterior">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <div class="calendario-img-container" id="calendarioImgContainer">
+                    <img id="calendarioImg" src="img/recursos/calendario_26/ene_26.jpeg" alt="Calendario Enero 2026" class="modal-image">
+                </div>
+                <button class="calendario-nav calendario-next" onclick="cambiarMes(1)" aria-label="Mes siguiente">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+            <div class="calendario-indicadores">
+                <span class="calendario-contador" id="calendarioContador">1 / 12</span>
+            </div>
+            <div class="calendario-meses-grid" id="calendarioMesesGrid">
+                <button class="calendario-mes-btn active" onclick="irAMes(0)">Ene</button>
+                <button class="calendario-mes-btn" onclick="irAMes(1)">Feb</button>
+                <button class="calendario-mes-btn" onclick="irAMes(2)">Mar</button>
+                <button class="calendario-mes-btn" onclick="irAMes(3)">Abr</button>
+                <button class="calendario-mes-btn" onclick="irAMes(4)">May</button>
+                <button class="calendario-mes-btn" onclick="irAMes(5)">Jun</button>
+                <button class="calendario-mes-btn" onclick="irAMes(6)">Jul</button>
+                <button class="calendario-mes-btn" onclick="irAMes(7)">Ago</button>
+                <button class="calendario-mes-btn" onclick="irAMes(8)">Sep</button>
+                <button class="calendario-mes-btn" onclick="irAMes(9)">Oct</button>
+                <button class="calendario-mes-btn" onclick="irAMes(10)">Nov</button>
+                <button class="calendario-mes-btn" onclick="irAMes(11)">Dic</button>
             </div>
         </div>
     </div>

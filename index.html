@@ -83,7 +83,22 @@
             </div>
 
             <div class="avisos-grid">
-                <p class="section-description" style="text-align: center; width: 100%;">No hay avisos por el momento.</p>
+                <div class="aviso-card" onclick="openModal2('avisoJuguetesModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/juguetes26.jpeg" alt="Juguetes 2026" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">01 Jul 2020 - 30 Jun 2026</span>
+                        <h3 class="aviso-title">Inscripción Reparto de Juguetes 2026</h3>
+                        <p class="aviso-description">
+                            Registro del 13 al 31 de agosto 2026 en Comisión de Actos y Festejos. Hijos de 0 a 12 años. Requisitos: acta de nacimiento, CURP, INE y talones de pago.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -618,6 +633,17 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoJuguetesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Inscripción Reparto de Juguetes 2026</h3>
+                <button class="modal-close" onclick="closeModal('avisoJuguetesModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/juguetes26.jpeg" alt="Juguetes 2026" class="modal-image">
+        </div>
+    </div>
 
     <!-- Modal para Calendario 2026 -->
     <div id="nominaModal" class="modal">

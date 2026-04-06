@@ -83,6 +83,22 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoFestejoTecAdmModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/festejo_comida_tec_adm.jpeg" alt="Festejo Técnico Administrativo" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">Martes 07 Abr 2026 | 1:30 PM</span>
+                        <h3 class="aviso-title">Festejo Categoría Técnico Administrativo</h3>
+                        <p class="aviso-description">
+                            La representación sindical UMF01 te invita al festejo de la categoría Técnico Administrativo. Martes 07 de abril, Comedor UMF 01 a la 1:30 PM. Comida y oportunidad de ganar increíbles premios. ¡No faltes!
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoCambiosBaseModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/cambios_base.jpeg" alt="Cambios de Base" class="aviso-image" loading="lazy">
@@ -665,6 +681,18 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoFestejoTecAdmModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Festejo Categoría Técnico Administrativo</h3>
+                <button class="modal-close" onclick="closeModal('avisoFestejoTecAdmModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/festejo_comida_tec_adm.jpeg" alt="Festejo Técnico Administrativo" class="modal-image">
+        </div>
+    </div>
+
     <div id="avisoCambiosBaseModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">

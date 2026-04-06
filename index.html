@@ -83,6 +83,38 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoCambiosBaseModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/cambios_base.jpeg" alt="Cambios de Base" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">Aviso Importante</span>
+                        <h3 class="aviso-title">Cambios de Base Trabajadora 02</h3>
+                        <p class="aviso-description">
+                            Si tienes cambio de residencia, rama, turno, adscripción o ampliación de jornada, ¡cancela a tiempo! Acude a la Oficina de Dotación de Recursos Humanos en la delegación.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso-card" onclick="openModal2('avisoDiaDelNinoModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/dia_del_nino_26.jpeg" alt="Día del Niño 2026" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">Registro: 01 - 14 Abr 2026 | Evento: 09 May 2026</span>
+                        <h3 class="aviso-title">Día de las y los Niños 2026</h3>
+                        <p class="aviso-description">
+                            Registro del 1 al 14 de abril de 10:00 a 16:00 hrs. Evento el 9 de mayo de 9:00 a 13:00 hrs. Niños de 4 a 12 años. Requisitos: tarjeta 1era marca, acta de nacimiento, constancia de afiliación al SNTSS, copia de contrato vigente e INE.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoJuguetesModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/juguetes26.jpeg" alt="Juguetes 2026" class="aviso-image" loading="lazy">
@@ -633,6 +665,30 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoCambiosBaseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Cambios de Base Trabajadora 02</h3>
+                <button class="modal-close" onclick="closeModal('avisoCambiosBaseModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/cambios_base.jpeg" alt="Cambios de Base" class="modal-image">
+        </div>
+    </div>
+
+    <div id="avisoDiaDelNinoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Día de las y los Niños 2026</h3>
+                <button class="modal-close" onclick="closeModal('avisoDiaDelNinoModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/dia_del_nino_26.jpeg" alt="Día del Niño 2026" class="modal-image">
+        </div>
+    </div>
+
     <div id="avisoJuguetesModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">

@@ -83,6 +83,38 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoSorteoCarroModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/sorteo-carro.jpg" alt="Sorteo Crédito Automotriz" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">Sorteo 11 May 2026 | 4:00 PM</span>
+                        <h3 class="aviso-title">Sorteo Crédito Automotriz</h3>
+                        <p class="aviso-description">
+                            Gracias a la Cláusula 146 del CCT. Inscripciones del 4 al 8 de mayo en el Centro de Convenciones Edificio Sindical de 10:00 a 16:00 hrs. Requisitos: INE original y copia, tarjetón 2da. de abril. Plática informativa: 18 de mayo a las 11:00 hrs.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso-card" onclick="openModal2('avisoVacVerano26Modal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/vac-verano-26.jpg" alt="Programa Vacacional de Verano 2026" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">08 - 12 Jun 2026 | Inscripciones</span>
+                        <h3 class="aviso-title">Programa Vacacional de Verano 2026</h3>
+                        <p class="aviso-description">
+                            Cláusula 147 del CCT. Inscripciones del 8 al 12 de junio 2026, 10:00 a 16:00 hrs en el Centro de Convenciones SNTSS (Av. Río Nilo 470, Col. San Carlos). Plan vacacional del 20 de julio al 14 de agosto 2026. Para hijos de 6 a 14 años de trabajadores base 02, 03 y 08. Trámite presencial (sin prórroga).
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoCarreraImssModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/carrera_imss.jpeg" alt="1ra Carrera Sindical 5K" class="aviso-image" loading="lazy">
@@ -729,6 +761,30 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoSorteoCarroModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Sorteo Crédito Automotriz</h3>
+                <button class="modal-close" onclick="closeModal('avisoSorteoCarroModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/sorteo-carro.jpg" alt="Sorteo Crédito Automotriz" class="modal-image">
+        </div>
+    </div>
+
+    <div id="avisoVacVerano26Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Programa Vacacional de Verano 2026</h3>
+                <button class="modal-close" onclick="closeModal('avisoVacVerano26Modal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/vac-verano-26.jpg" alt="Programa Vacacional de Verano 2026" class="modal-image">
+        </div>
+    </div>
+
     <div id="avisoCarreraImssModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">

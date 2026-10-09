@@ -83,6 +83,54 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoConsultaSalarialModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/consulta_salarial_26.jpg" alt="Consulta Salarial 2026" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">14 de Octubre 2026</span>
+                        <h3 class="aviso-title">Consulta Salarial 2026</h3>
+                        <p class="aviso-description">
+                            Vota sobre la propuesta de incremento salarial SNTSS-IMSS. Participa personal de base 02, 03, 07 y 08. Lleva tu gafete institucional o identificación oficial.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso-card" onclick="openModal2('avisoVotoLibreModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/voto_libre_secreto.jpg" alt="El voto es libre y secreto" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">14 de Octubre 2026</span>
+                        <h3 class="aviso-title">¡No se dejen intimidar!</h3>
+                        <p class="aviso-description">
+                            El voto sobre la propuesta de incremento salarial es libre y secreto. Participa y emite tu voto este 14 de octubre.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso-card" onclick="openModal2('avisoComunicarATiempoModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/comunicar_a_tiempo.jpg" alt="Comunicar a tiempo, cumplir con todos" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">Aviso Importante</span>
+                        <h3 class="aviso-title">Comunicar a Tiempo, Cumplir con Todos</h3>
+                        <p class="aviso-description">
+                            Entrega la documentación antes del cierre de quincena y justifica oportunamente las faltas para evitar incidencias administrativas.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoCambiosBaseModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/cambios_base.jpeg" alt="Cambios de Base" class="aviso-image" loading="lazy">
@@ -605,6 +653,18 @@
                         <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
                     </div>
                 </div>
+
+                <!-- Sealand -->
+                <div class="descuento-card" onclick="openModal2('sealandModal', event)">
+                    <div class="descuento-image-container">
+                        <img src="img/descuentos/sealand.jpg" alt="Acuario Sealand" class="descuento-image" loading="lazy">
+                    </div>
+                    <div class="descuento-info">
+                        <h3 class="descuento-title">Acuario Sealand</h3>
+                        <p class="descuento-description">El médico entra gratis y acompañantes 50% de descuento (preventa)</p>
+                        <span class="resource-badge"><span>Ver Detalle</span><i data-lucide="chevron-right"></i></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -645,6 +705,39 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoConsultaSalarialModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Consulta Salarial 2026</h3>
+                <button class="modal-close" onclick="closeModal('avisoConsultaSalarialModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/consulta_salarial_26.jpg" alt="Consulta Salarial 2026" class="modal-image">
+        </div>
+    </div>
+    <div id="avisoVotoLibreModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">¡No se dejen intimidar!</h3>
+                <button class="modal-close" onclick="closeModal('avisoVotoLibreModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/voto_libre_secreto.jpg" alt="El voto es libre y secreto" class="modal-image">
+        </div>
+    </div>
+    <div id="avisoComunicarATiempoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Comunicar a Tiempo, Cumplir con Todos</h3>
+                <button class="modal-close" onclick="closeModal('avisoComunicarATiempoModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/comunicar_a_tiempo.jpg" alt="Comunicar a tiempo, cumplir con todos" class="modal-image">
+        </div>
+    </div>
     <div id="avisoCambiosBaseModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1089,6 +1182,21 @@
             <img src="img/recursos/zoo.jpeg" alt="Zoo Guadalajara" class="modal-image">
             <div class="modal-actions">
                 <a href="img/recursos/zoo.jpeg" download="Descuento_Zoo_Guadalajara.jpeg" class="modal-btn modal-btn-download">
+                    <i data-lucide="download"></i><span>Descargar</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="sealandModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Acuario Sealand - Celebra al Médico</h3>
+                <button class="modal-close" onclick="closeModal('sealandModal')"><i data-lucide="x"></i></button>
+            </div>
+            <img src="img/descuentos/sealand.jpg" alt="Acuario Sealand" class="modal-image">
+            <div class="modal-actions">
+                <a href="img/descuentos/sealand.jpg" download="Descuento_Acuario_Sealand.jpg" class="modal-btn modal-btn-download">
                     <i data-lucide="download"></i><span>Descargar</span>
                 </a>
             </div>

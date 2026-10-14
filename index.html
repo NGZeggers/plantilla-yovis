@@ -83,6 +83,38 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoComunicadoSindicatoModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/comunicado_sindicato_13_oct_26.jpg" alt="Comunicado SNTSS Sección III Jalisco" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">13 de Octubre 2026</span>
+                        <h3 class="aviso-title">Comunicado del Secretario General</h3>
+                        <p class="aviso-description">
+                            Llamado a la base trabajadora de Jalisco a mantener la tranquilidad, la unidad y el respeto a la democracia sindical. La voluntad de la mayoría será respetada.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso-card" onclick="openModal2('avisoCajaAhorrosCierreModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/aviso_caja_ahorros_13_oct_26.jpg" alt="Aviso Caja de Ahorros" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">13 de Octubre 2026</span>
+                        <h3 class="aviso-title">Cierre Temporal Caja de Ahorros</h3>
+                        <p class="aviso-description">
+                            Las oficinas de la Caja de Ahorros en Guadalajara permanecerán cerradas temporalmente. La aplicación móvil sigue funcionando para trámites de ahorro y préstamo.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoConsultaSalarialModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/consulta_salarial_26.jpg" alt="Consulta Salarial 2026" class="aviso-image" loading="lazy">
@@ -705,6 +737,28 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoComunicadoSindicatoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Comunicado del Secretario General</h3>
+                <button class="modal-close" onclick="closeModal('avisoComunicadoSindicatoModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/comunicado_sindicato_13_oct_26.jpg" alt="Comunicado SNTSS Sección III Jalisco" class="modal-image">
+        </div>
+    </div>
+    <div id="avisoCajaAhorrosCierreModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Cierre Temporal Caja de Ahorros</h3>
+                <button class="modal-close" onclick="closeModal('avisoCajaAhorrosCierreModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/aviso_caja_ahorros_13_oct_26.jpg" alt="Aviso Caja de Ahorros" class="modal-image">
+        </div>
+    </div>
     <div id="avisoConsultaSalarialModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">

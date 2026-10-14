@@ -83,6 +83,22 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoPlantonModal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/suspension_servicios_planton.jpg" alt="Suspensión temporal de servicios sindicales" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">Aviso Importante</span>
+                        <h3 class="aviso-title">Suspensión Temporal de Servicios Sindicales</h3>
+                        <p class="aviso-description">
+                            Debido al plantón en las instalaciones sindicales, la atención, trámites y servicios (Caja de Ahorro, becas SINABETH, seguros facultativos, entre otros) permanecen suspendidos temporalmente.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoComunicadoSindicatoModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/comunicado_sindicato_13_oct_26.jpg" alt="Comunicado SNTSS Sección III Jalisco" class="aviso-image" loading="lazy">
@@ -737,6 +753,17 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoPlantonModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Suspensión Temporal de Servicios Sindicales</h3>
+                <button class="modal-close" onclick="closeModal('avisoPlantonModal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/suspension_servicios_planton.jpg" alt="Suspensión temporal de servicios sindicales" class="modal-image">
+        </div>
+    </div>
     <div id="avisoComunicadoSindicatoModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">

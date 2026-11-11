@@ -83,6 +83,38 @@
             </div>
 
             <div class="avisos-grid">
+                <div class="aviso-card" onclick="openModal2('avisoJuguetes1Modal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/entrega_juguetes_26_parte1.jpg" alt="Entrega de Juguetes 2026 Zona Metropolitana, 17 al 23 de noviembre" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">17 al 23 de Noviembre 2026</span>
+                        <h3 class="aviso-title">Entrega de Juguetes 2026 - Zona Metropolitana</h3>
+                        <p class="aviso-description">
+                            Calendario de entrega por centro de trabajo: Guarderías, Almacén Delegacional, Oficinas Delegacionales, Centro Médico Nacional de Occidente, UMF y Hospital General Regional 110.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso-card" onclick="openModal2('avisoJuguetes2Modal', event)">
+                    <div class="aviso-image-container">
+                        <img src="img/avisos/entrega_juguetes_26_parte2.jpg" alt="Entrega de Juguetes 2026, 24 al 26 de noviembre, lugar, hora y requisitos" class="aviso-image" loading="lazy">
+                    </div>
+                    <div class="aviso-info">
+                        <span class="aviso-date">24 al 26 de Noviembre 2026</span>
+                        <h3 class="aviso-title">Entrega de Juguetes 2026 - Fechas y Requisitos</h3>
+                        <p class="aviso-description">
+                            Centro de Investigaciones, Edificio Sindical, de 09:00 a 16:00 hrs. Presenta INE o gafete institucional del trabajador y el vale original del juguete.
+                        </p>
+                        <span class="resource-badge">
+                            <span>Ver Detalle</span>
+                            <i data-lucide="chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="aviso-card" onclick="openModal2('avisoPlantonModal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/suspension_servicios_planton.jpg" alt="Suspensión temporal de servicios sindicales" class="aviso-image" loading="lazy">
@@ -753,6 +785,28 @@
     </footer>
 
     <!-- Modales de Avisos -->
+    <div id="avisoJuguetes1Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Entrega de Juguetes 2026 - Zona Metropolitana</h3>
+                <button class="modal-close" onclick="closeModal('avisoJuguetes1Modal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/entrega_juguetes_26_parte1.jpg" alt="Entrega de Juguetes 2026 Zona Metropolitana, 17 al 23 de noviembre" class="modal-image">
+        </div>
+    </div>
+    <div id="avisoJuguetes2Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Entrega de Juguetes 2026 - Fechas y Requisitos</h3>
+                <button class="modal-close" onclick="closeModal('avisoJuguetes2Modal')">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <img src="img/avisos/entrega_juguetes_26_parte2.jpg" alt="Entrega de Juguetes 2026, 24 al 26 de noviembre, lugar, hora y requisitos" class="modal-image">
+        </div>
+    </div>
     <div id="avisoPlantonModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">

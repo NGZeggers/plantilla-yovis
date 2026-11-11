@@ -83,7 +83,7 @@
             </div>
 
             <div class="avisos-grid">
-                <div class="aviso-card" onclick="openModal2('avisoJuguetes1Modal', event)">
+                <div class="aviso-card" data-expira="2026-11-23" onclick="openModal2('avisoJuguetes1Modal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/entrega_juguetes_26_parte1.jpg" alt="Entrega de Juguetes 2026 Zona Metropolitana, 17 al 23 de noviembre" class="aviso-image" loading="lazy">
                     </div>
@@ -99,7 +99,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="aviso-card" onclick="openModal2('avisoJuguetes2Modal', event)">
+                <div class="aviso-card" data-expira="2026-11-26" onclick="openModal2('avisoJuguetes2Modal', event)">
                     <div class="aviso-image-container">
                         <img src="img/avisos/entrega_juguetes_26_parte2.jpg" alt="Entrega de Juguetes 2026, 24 al 26 de noviembre, lugar, hora y requisitos" class="aviso-image" loading="lazy">
                     </div>
@@ -124,70 +124,6 @@
                         <h3 class="aviso-title">Suspensión Temporal de Servicios Sindicales</h3>
                         <p class="aviso-description">
                             Debido al plantón en las instalaciones sindicales, la atención, trámites y servicios (Caja de Ahorro, becas SINABETH, seguros facultativos, entre otros) permanecen suspendidos temporalmente.
-                        </p>
-                        <span class="resource-badge">
-                            <span>Ver Detalle</span>
-                            <i data-lucide="chevron-right"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="aviso-card" onclick="openModal2('avisoComunicadoSindicatoModal', event)">
-                    <div class="aviso-image-container">
-                        <img src="img/avisos/comunicado_sindicato_13_oct_26.jpg" alt="Comunicado SNTSS Sección III Jalisco" class="aviso-image" loading="lazy">
-                    </div>
-                    <div class="aviso-info">
-                        <span class="aviso-date">13 de Octubre 2026</span>
-                        <h3 class="aviso-title">Comunicado del Secretario General</h3>
-                        <p class="aviso-description">
-                            Llamado a la base trabajadora de Jalisco a mantener la tranquilidad, la unidad y el respeto a la democracia sindical. La voluntad de la mayoría será respetada.
-                        </p>
-                        <span class="resource-badge">
-                            <span>Ver Detalle</span>
-                            <i data-lucide="chevron-right"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="aviso-card" onclick="openModal2('avisoCajaAhorrosCierreModal', event)">
-                    <div class="aviso-image-container">
-                        <img src="img/avisos/aviso_caja_ahorros_13_oct_26.jpg" alt="Aviso Caja de Ahorros" class="aviso-image" loading="lazy">
-                    </div>
-                    <div class="aviso-info">
-                        <span class="aviso-date">13 de Octubre 2026</span>
-                        <h3 class="aviso-title">Cierre Temporal Caja de Ahorros</h3>
-                        <p class="aviso-description">
-                            Las oficinas de la Caja de Ahorros en Guadalajara permanecerán cerradas temporalmente. La aplicación móvil sigue funcionando para trámites de ahorro y préstamo.
-                        </p>
-                        <span class="resource-badge">
-                            <span>Ver Detalle</span>
-                            <i data-lucide="chevron-right"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="aviso-card" onclick="openModal2('avisoConsultaSalarialModal', event)">
-                    <div class="aviso-image-container">
-                        <img src="img/avisos/consulta_salarial_26.jpg" alt="Consulta Salarial 2026" class="aviso-image" loading="lazy">
-                    </div>
-                    <div class="aviso-info">
-                        <span class="aviso-date">14 de Octubre 2026</span>
-                        <h3 class="aviso-title">Consulta Salarial 2026</h3>
-                        <p class="aviso-description">
-                            Vota sobre la propuesta de incremento salarial SNTSS-IMSS. Participa personal de base 02, 03, 07 y 08. Lleva tu gafete institucional o identificación oficial.
-                        </p>
-                        <span class="resource-badge">
-                            <span>Ver Detalle</span>
-                            <i data-lucide="chevron-right"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="aviso-card" onclick="openModal2('avisoVotoLibreModal', event)">
-                    <div class="aviso-image-container">
-                        <img src="img/avisos/voto_libre_secreto.jpg" alt="El voto es libre y secreto" class="aviso-image" loading="lazy">
-                    </div>
-                    <div class="aviso-info">
-                        <span class="aviso-date">14 de Octubre 2026</span>
-                        <h3 class="aviso-title">¡No se dejen intimidar!</h3>
-                        <p class="aviso-description">
-                            El voto sobre la propuesta de incremento salarial es libre y secreto. Participa y emite tu voto este 14 de octubre.
                         </p>
                         <span class="resource-badge">
                             <span>Ver Detalle</span>
@@ -816,50 +752,6 @@
                 </button>
             </div>
             <img src="img/avisos/suspension_servicios_planton.jpg" alt="Suspensión temporal de servicios sindicales" class="modal-image">
-        </div>
-    </div>
-    <div id="avisoComunicadoSindicatoModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Comunicado del Secretario General</h3>
-                <button class="modal-close" onclick="closeModal('avisoComunicadoSindicatoModal')">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <img src="img/avisos/comunicado_sindicato_13_oct_26.jpg" alt="Comunicado SNTSS Sección III Jalisco" class="modal-image">
-        </div>
-    </div>
-    <div id="avisoCajaAhorrosCierreModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Cierre Temporal Caja de Ahorros</h3>
-                <button class="modal-close" onclick="closeModal('avisoCajaAhorrosCierreModal')">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <img src="img/avisos/aviso_caja_ahorros_13_oct_26.jpg" alt="Aviso Caja de Ahorros" class="modal-image">
-        </div>
-    </div>
-    <div id="avisoConsultaSalarialModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Consulta Salarial 2026</h3>
-                <button class="modal-close" onclick="closeModal('avisoConsultaSalarialModal')">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <img src="img/avisos/consulta_salarial_26.jpg" alt="Consulta Salarial 2026" class="modal-image">
-        </div>
-    </div>
-    <div id="avisoVotoLibreModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">¡No se dejen intimidar!</h3>
-                <button class="modal-close" onclick="closeModal('avisoVotoLibreModal')">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <img src="img/avisos/voto_libre_secreto.jpg" alt="El voto es libre y secreto" class="modal-image">
         </div>
     </div>
     <div id="avisoComunicarATiempoModal" class="modal">

@@ -125,5 +125,20 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+// Avisos con vencimiento: una tarjeta con data-expira="AAAA-MM-DD" se muestra
+// hasta el final de ese día y se quita sola a partir del día siguiente.
+// Las tarjetas sin data-expira no vencen.
+(function() {
+    var hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    var tarjetas = document.querySelectorAll('.aviso-card[data-expira]');
+    for (var i = 0; i < tarjetas.length; i++) {
+        var partes = tarjetas[i].getAttribute('data-expira').split('-');
+        var vence = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]));
+        if (isNaN(vence.getTime())) continue;
+        if (hoy > vence) tarjetas[i].parentNode.removeChild(tarjetas[i]);
+    }
+})();
+
 // Inicializar iconos de Lucide
 lucide.createIcons();
